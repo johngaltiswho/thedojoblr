@@ -76,8 +76,8 @@ app.use((req, res) => {
 });
 
 // * * * * *
-app.listen(process.env.DEVELOPMENTPORT, () => {
- console.log("Server listening on port " + process.env.DEVELOPMENTPORT);
+app.listen(process.env.PORT, () => {
+ console.log("Server listening on port " + process.env.PORT);
 });
 
 // catch 404 and forward to error handler
