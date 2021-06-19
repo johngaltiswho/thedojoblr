@@ -1,0 +1,20 @@
+/* .card-deck .card {
+  color:black;
+} */
+
+.card-deck {
+  color: black;
+}
+
+.card-deck .card {
+  background: floralwhite;
+  padding: 15px;
+}
+
+.list-group-flush>.list-group-item {
+  background: floralwhite;
+}
+
+body {
+  margin-top: 0px!important;
+}
