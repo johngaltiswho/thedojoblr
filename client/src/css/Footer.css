@@ -103,6 +103,15 @@ a {
   .grid-item:nth-child(n + 1) {
       padding-top: 0;
   }
+
+  .footer-header {
+    display: block;
+  }
+
+  .oneline-footer {
+    justify-content: center;
+  }
+
 }
 
 @media (min-width: 491px) and (max-width: 575px) {
@@ -132,6 +141,14 @@ a {
     .grid-item:nth-child(n + 1) {
         padding-top: 0;
     }
+    .footer-header {
+      display: block;
+    }
+    .oneline-footer {
+      justify-content: center;
+    }
+
+
 
   }
 
@@ -162,6 +179,13 @@ a {
     .grid-item:nth-child(n + 1) {
         padding-top: 0;
     }
+    .footer-header {
+      display: block;
+    }
+    .oneline-footer {
+      justify-content: center;
+    }
+
 
   }
 
@@ -194,6 +218,13 @@ a {
     }
     .grid-item:nth-child(n + 1) {
         padding-top: 0;
+    }
+    .footer-header {
+      display: block;
+    }
+
+    .oneline-footer {
+      justify-content: center;
     }
 
   }

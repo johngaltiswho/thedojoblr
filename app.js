@@ -11,6 +11,8 @@ var app = express();
 
 app.use(cors());
 
+var enquiryRouter = require('./routes/enquiryRouter');
+var newsletterRouter = require('./routes/newsletterRouter');
 // //sengrid parameters
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -71,6 +73,9 @@ if (app.get('env') === 'production') {
     res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
   });
 }
+
+app.use('/enquiry', enquiryRouter);
+app.use('/newsletter', newsletterRouter);
 
 app.use((req, res) => {
   res.status(200).send(req.originalUrl);

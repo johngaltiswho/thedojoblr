@@ -1,3 +1,14 @@
 header {
-  border-bottom: 0.1px solid gray;  
+  border-bottom: 0.1px solid gray;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-nav {
+  text-align: center;
+}
+
+
+.login {
+  height: 25px;
 }

@@ -13,7 +13,7 @@ function Membership(props) {
             <p className="space col-md-12 col-xl-12 col-sm-12 col-xs-12"> Choose a plan that works best for you </p>
             <hr className="hr-large d-none d-md-block"/>
             <CardDeck>
-              <Card style={{ width: '18rem' }}>
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
                   <Card.Title>Ronin (Day) Pass <br/> <br/><strong><h3> Rs.500 </h3> </strong>
                   </Card.Title>
@@ -34,7 +34,7 @@ function Membership(props) {
                   </Card.Link>
                 </Card.Body>
               </Card>
-              <Card style={{ width: '18rem' }}>
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
                   <Card.Title> Samurai (Month) Pass <br/> <br/><strong><h3> Rs.4500 </h3> </strong>
                   </Card.Title>
@@ -55,7 +55,7 @@ function Membership(props) {
                   </Card.Link>
                 </Card.Body>
               </Card>
-              <Card style={{ width: '18rem' }}>
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
                   <Card.Title> Zen (Annual) Pass <br/> <br/><strong><h3> Rs.40000 </h3> </strong>
                   </Card.Title>

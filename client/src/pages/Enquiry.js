@@ -1,9 +1,11 @@
 import {React, useState } from 'react';
 import axios from 'axios'
 import '../css/Enquiry.css';
+import { useHistory } from 'react-router-dom';
 
 function Enquiry(props) {
   const [enquiry, setEnquiry] = useState({name: "",email: "",phone:"",sub:"",msg:""});
+  const history = useHistory();
 
   const handleSetEnquiry = e => {
     const { name, value } = e.target;
@@ -15,7 +17,7 @@ function Enquiry(props) {
 
   const submitEnquiry = (e) => {
     e.preventDefault();
-    axios.put('/orders/' + e.target.name, {
+    axios.post('/enquiry', {
       name: enquiry.name,
       email: enquiry.email,
       phone: enquiry.phone,
@@ -31,6 +33,7 @@ function Enquiry(props) {
           sub: "",
           msg: "",
       }));
+      history.push(`/thank-you-for-contacting-us`);
     })
     .catch(err => console.log(err));
   };
@@ -54,14 +57,14 @@ function Enquiry(props) {
                </div>
                <div className="col-md-4">
                 <div className="md-form">
-                  <input  className="form-control" name="name" value={enquiry.name} onChange={handleSetEnquiry}/>
+                  <input  className="form-control" name="email" value={enquiry.email} onChange={handleSetEnquiry}/>
                   <label for="email">Your Email</label>
                   <div className="invalid-feedback">Please Provide a Valid Email ID!</div>
                 </div>
                </div>
                <div className="col-md-4">
                 <div className="md-form">
-                  <input  className="form-control" name="name" value={enquiry.name} onChange={handleSetEnquiry}/>
+                  <input  className="form-control" name="phone" value={enquiry.phone} onChange={handleSetEnquiry}/>
                   <label for="phone">Your Phone Number</label>
                   <div className="invalid-feedback">Please Enter a Valid Phone Number</div>
                 </div>
@@ -70,7 +73,7 @@ function Enquiry(props) {
              <div className="row">
               <div className="col-md-12">
                 <div className="md-form">
-                  <input  className="form-control" name="name" value={enquiry.name} onChange={handleSetEnquiry}/>
+                  <input  className="form-control" name="sub" value={enquiry.sub} onChange={handleSetEnquiry}/>
                   <label for="subject">Subject</label>
                   <div className="invalid-feedback">Please enter subject!</div>
                  </div>
@@ -79,7 +82,7 @@ function Enquiry(props) {
              <div className="row">
               <div className="col-md-12">
                 <div className="md-form">
-                  <input  className="form-control" name="name" value={enquiry.name} onChange={handleSetEnquiry}/>
+                  <textarea  className="form-control" name="msg" value={enquiry.msg} onChange={handleSetEnquiry}/>
                   <label for="message">Your Message</label>
                   <div className="invalid-feedback">Please enter your message!</div>
                 </div>

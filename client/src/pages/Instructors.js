@@ -44,30 +44,13 @@ function Instructors(props) {
           him to continue growing along with his students/peers.
           <br/>
           <br/>
-          <strong> Accomplishments </strong> <br/>
-            South Asian Open 2019, Middleweight, No-Gi: Silver <br/>
-            South Asian Open 2019, Middleweight Gi: Bronze <br/>
-            Indian Natial Open 2019, Middleweight No-Gi: Gold  <br/>
-            Indian Natial Open 2019, Middleweight Gi: Gold  <br/>
-            Marianas Open 2018, Lightweight, Gi:  Gold <br/>
-            Indian Natial Open 2018, Lightweight Gi: Gold - Selected for Asian Games 2018 <br/>
-            UAEJJF White Belt 2017, Gi: Gold <br/>
           </p>
         </div>
       </div>
       <div className="container">
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <p className="right-aligned"> Over 20 years of experience Vinayak is a <br/> <br/>
-          <br/>
-          <strong> Accomplishments </strong><br/>
-            South Asian Open 2019, Middleweight, No-Gi: Silver <br/>
-            South Asian Open 2019, Middleweight Gi: Bronze <br/>
-            Indian Natial Open 2019, Middleweight No-Gi: Gold  <br/>
-            Indian Natial Open 2019, Middleweight Gi: Gold  <br/>
-            Marianas Open 2018, Lightweight, Gi:  Gold <br/>
-            Indian Natial Open 2018, Lightweight Gi: Gold - Selected for Asian Games 2018 <br/>
-            UAEJJF White Belt 2017, Gi: Gold <br/>
-  
+          <br/>  
           </p>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">

@@ -45,3 +45,38 @@
 .contactinfo {
   text-align: left;
 }
+
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .contactinfo {
+    text-align: center;
+  }
+}
+@media (min-width: 491px) and (max-width: 575px) {
+  .contactinfo {
+    text-align: center;
+  }
+
+}
+@media (min-width: 348px) and (max-width: 490px) {
+  .contactinfo {
+    text-align: center;
+  }
+
+}
+@media (max-width: 347px) {
+  .contactinfo {
+    text-align: center;
+  }
+
+}

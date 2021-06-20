@@ -11,6 +11,10 @@ import Membership from './pages/Membership'
 import GymRules from './pages/GymRules'
 import Instructors from './pages/Instructors'
 import TheDojoExperience from './pages/TheDojoExperience'
+import ThankYouContact from './pages/ThankYouContact'
+import ThankYouNewsletter from './pages/ThankYouNewsletter'
+
+import FAQ from './pages/FAQ'
 
 function App() {
   return (
@@ -26,6 +30,9 @@ function App() {
             <Route path='/gym-rules' component={GymRules}/>
             <Route path='/instructors' component={Instructors}/>
             <Route path='/the-dojo-experience' component={TheDojoExperience}/>
+            <Route path='/thank-you-for-contacting-us' component={ThankYouContact}/>
+            <Route path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
+            <Route path='/frequently-asked-questions' component={FAQ}/>
           </Switch>
         <Footer/>
       </div>

@@ -18,3 +18,36 @@
 body {
   margin-top: 0px!important;
 }
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .card-deck {
+    display: block;
+  }
+}
+@media (min-width: 491px) and (max-width: 575px) {
+  .card-deck {
+    display: block;
+  }
+
+}
+@media (min-width: 348px) and (max-width: 490px) {
+  .card-deck {
+    display: block;
+  }
+
+
+}
+@media (max-width: 347px) {
+  .card-deck {
+    display: block;
+  }
+}

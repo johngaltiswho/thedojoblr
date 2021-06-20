@@ -18,5 +18,9 @@
   text-align: justify;
 }
 
+.ul {
+  text-align: left!important;
+}
+
 @media (min-width: 1200px) {
 }

@@ -32,12 +32,12 @@ const enquirySchema = new Schema({
         required: 'Please enter your phone number',
         validate: [validateNumber, 'Please fill a valid phone number!' ]
     },
-    subject: {
+    sub: {
       type: String,
       required: true,
       required: 'Please enter a subject'
     },
-    message: {
+    msg: {
       type: String,
       required: true,
       required: 'Please enter a message'
@@ -46,6 +46,6 @@ const enquirySchema = new Schema({
     timestamps: true
 });
 
-var enquiry = mongoose.model('enquiry', contactusSchema);
+var enquiry = mongoose.model('enquiry', enquirySchema);
 
 module.exports = enquiry;
