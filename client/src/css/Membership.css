@@ -7,12 +7,12 @@
 }
 
 .card-deck .card {
-  background: floralwhite;
+  background: #dfe0e2;
   padding: 15px;
 }
 
 .list-group-flush>.list-group-item {
-  background: floralwhite;
+  background: #dfe0e2;
 }
 
 body {

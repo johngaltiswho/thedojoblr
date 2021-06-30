@@ -9,3 +9,14 @@
   background: black;
   background-image: linear-gradient();
 }
+
+.index-header-left {
+  font-size: 56px;
+  text-align: left;
+  font-weight: 900;
+  color: #8b233f;
+}
+
+.justify {
+  text-align: justify;
+}

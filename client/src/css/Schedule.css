@@ -14,7 +14,7 @@ body{
 }
 
 .table td {
-    color: white;
+    color: #8b233f;
 }
 
 .table-bordered td, .table-bordered th {
@@ -102,7 +102,7 @@ body{
 }
 
 .text-light-gray {
-    color: #d6d5d5;
+    color: #1f101a;
 }
 .font-size13 {
     font-size: 13px;
