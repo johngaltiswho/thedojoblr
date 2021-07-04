@@ -100,7 +100,7 @@ razorpayRouter.route('/payment-confirmation')
   };
   request(options)
   .then((body) => {
-    console.log('Succesfully Updated Order Status')
+    console.log('Succesfully Updated Order Status');
   }).catch((error) => {
     res.status = 200;
     console.log("Error in Updating: " + error)
