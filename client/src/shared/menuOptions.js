@@ -25,6 +25,16 @@ export const MENUOPTIONS =
     id: 4,
     name: "Enquiry",
     link: "/enquiry"
+  },
+  {
+    id: 5,
+    name: "Gallery",
+    link: "/gallery"
 
+  },
+  {
+    id: 6,
+    name: "Shop",
+    link: "https://fluviumwear.com/shop"
   },
 ]

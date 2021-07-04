@@ -1,5 +1,5 @@
 import {React, useState, useEffect } from 'react';
-import {Navbar, Nav, Form} from 'react-bootstrap'
+import {Navbar, Nav, Form, NavDropdown} from 'react-bootstrap'
 import {MENUOPTIONS} from '../shared/menuOptions.js';
 import '../css/Header.css';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -10,8 +10,9 @@ function Header(props) {
   const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
 
   useEffect(() => {
-    console.log(isAuthenticated)
-  });
+    if(isAuthenticated){
+    }
+  }, []);
 
   return (
     <>
@@ -25,7 +26,15 @@ function Header(props) {
               {menuOptions.map((menu) => (
                 <Nav.Link key = {menu.id} href={menu.link}> {menu.name} </Nav.Link>
               ))}
-              <Nav.Link onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Login" : "Logout"} </Nav.Link>
+              {isAuthenticated ?
+                <NavDropdown title="Account" id="dropdown-menu-align-right" menuAlign="left" drop="down" align="center">
+                  <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Logout": "Logout"}</NavDropdown.Item>
+                </NavDropdown>
+                :
+                ""
+              }
+              <Nav.Link onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Login" : ""} </Nav.Link>
             </Nav>
           </Navbar.Collapse>
 

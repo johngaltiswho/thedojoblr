@@ -19,6 +19,17 @@ body {
   margin-top: 0px!important;
 }
 
+.modal-header {
+  text-align: center;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-body .form-control {
+  text-align: center;
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
 

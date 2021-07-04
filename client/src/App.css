@@ -9,7 +9,24 @@
 }
 
 p {
-color: #1f101a;
+  color: #1f101a;
+}
+
+h1 {
+  color: #8b233f;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 48px;
+  left: -50px;
+  background-color: #dfe0e2;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0px;
+}
+.form-control {
+  color: #1f101a;
 }
 
 .btn-primary {
@@ -93,4 +110,73 @@ color: white;
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .index-header {
+    font-size: 42px;
+  }
+
+  .index-header-right {
+    font-size: 42px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: transparent;
+    border: 0px;
+  }
+}
+@media (min-width: 491px) and (max-width: 575px) {
+  .index-header {
+    font-size: 42px;
+  }
+
+  .index-header-right {
+    font-size: 42px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: transparent;
+    border: 0px;
+  }
+
+}
+@media (min-width: 348px) and (max-width: 490px) {
+  .index-header {
+    font-size: 42px;
+  }
+
+  .index-header-right {
+    font-size: 42px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: transparent;
+    border: 0px;
+  }
+
+
+}
+@media (max-width: 347px) {
+  .index-header {
+    font-size: 42px;
+  }
+
+  .index-header-right {
+    font-size: 42px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: transparent;
+    border: 0px;
+  }
+
+
 }

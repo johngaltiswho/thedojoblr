@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React} from 'react';
 import {Carousel, Image }from 'react-bootstrap';
 import '../css/TheDojoExperience.css';
 

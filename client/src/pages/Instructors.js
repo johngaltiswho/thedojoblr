@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import '../css/HomePage.css';
 
@@ -50,7 +50,7 @@ function Instructors(props) {
       <div className="container">
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <p className="right-aligned"> Over 20 years of experience Vinayak is a <br/> <br/>
-          <br/>  
+          <br/>
           </p>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">

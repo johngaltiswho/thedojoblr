@@ -13,6 +13,9 @@ app.use(cors());
 
 var enquiryRouter = require('./routes/enquiryRouter');
 var newsletterRouter = require('./routes/newsletterRouter');
+var razorpayRouter = require('./routes/razorpayRouter');
+var userRouter = require('./routes/userRouter');
+
 // //sengrid parameters
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -76,6 +79,8 @@ if (app.get('env') === 'production') {
 
 app.use('/enquiry', enquiryRouter);
 app.use('/newsletter', newsletterRouter);
+app.use('/razorpay', razorpayRouter);
+app.use('/user', userRouter);
 
 app.use((req, res) => {
   res.status(200).send(req.originalUrl);

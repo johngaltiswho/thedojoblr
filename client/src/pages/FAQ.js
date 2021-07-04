@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React} from 'react';
 import '../css/Policy.css';
 
 function PrivacyPolicy(props) {
@@ -30,12 +30,10 @@ function PrivacyPolicy(props) {
           <br/>
           <br/>
          </p>
-       </div>
-       <div class="thumbnail center well well-sm text-center">
-        <a class="btn btn-large btn-primary" href="index">Return Home</a>
-        <p>
-          <hr class="hr-large"/>
-        </p>
+         <div class="thumbnail center well well-sm text-center">
+           <a class="btn btn-large btn-primary" href="index">Return Home</a>
+           <hr class="hr-large"/>
+         </div>
        </div>
      </div>
    </main>

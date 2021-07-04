@@ -46,6 +46,21 @@
   text-align: left;
 }
 
+.form-control {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+  border-bottom: 1px solid black;
+
+}
 
 @media (min-width: 1200px) {
 }

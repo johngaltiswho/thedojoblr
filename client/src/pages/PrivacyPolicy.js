@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React } from 'react';
 import '../css/Policy.css';
 
 function PrivacyPolicy(props) {
@@ -81,9 +81,9 @@ function PrivacyPolicy(props) {
             #403, 22nd Cross, 2nd Sector, HSR Layout, Bangalore, 560102, Bangalore, KA, 560102, India.
             <br/>
             <br/>
+            <hr className="hr-large"/>
           </p>
         </div>
-        <hr className="hr-large"/>
       </div>
     </main>
   );

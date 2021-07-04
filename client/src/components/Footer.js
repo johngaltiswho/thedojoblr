@@ -67,7 +67,7 @@ function Footer(props) {
                   Subscribe to our newsletter and to stay upto date on the The Dojos Events.
                   <input className="form-control" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
-                <div class="invalid-feedback">Please provide a valid Email Id.</div>
+                <div className="invalid-feedback">Please provide a valid Email Id.</div>
               </div>
               <input className = "btn btn-large btn-primary" type='submit' value='SUBMIT' name="Submit" onClick={submitNewsletter} />
             </div>

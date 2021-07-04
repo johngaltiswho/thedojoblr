@@ -5,15 +5,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="thedojo.au.auth0.com"
-    clientId="aY5CIvLWwA0UKs86LmcwMqIYIQETLR0f"
-    redirectUri={window.location.origin}
-  >
-    <App />
-  </Auth0Provider>,
+  <Router>
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
+  </Router>,
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,

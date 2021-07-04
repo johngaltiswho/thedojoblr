@@ -1,7 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ProtectedRoute from "./auth/protected-route";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Loading from './components/Loading'
 import Home from './pages/HomePage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Enquiry from './pages/Enquiry'
@@ -12,10 +16,18 @@ import Instructors from './pages/Instructors'
 import TheDojoExperience from './pages/TheDojoExperience'
 import ThankYouContact from './pages/ThankYouContact'
 import ThankYouNewsletter from './pages/ThankYouNewsletter'
-
+import Profile from './pages/Profile'
+import ContactInfo from './pages/ContactInfo'
 import FAQ from './pages/FAQ'
 
 function App() {
+
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading/>;
+  }
+
   return (
     <Router>
       <div className="App">
@@ -32,6 +44,8 @@ function App() {
             <Route path='/thank-you-for-contacting-us' component={ThankYouContact}/>
             <Route path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
             <Route path='/frequently-asked-questions' component={FAQ}/>
+            <ProtectedRoute path='/profile' component={Profile}/>
+            <ProtectedRoute path='/contact-info' component={ContactInfo}/>
           </Switch>
         <Footer/>
       </div>
