@@ -16,7 +16,7 @@ function Profile(props) {
     // console.log(user)
     axios.get('/user?email=' + user.email)
     .then(res => {
-      console.log(res)
+      console.log(res);
       setProfile({
         name: res.data.name || "",
         email: res.data.email || "",

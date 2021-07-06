@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('./cors');
 
 const Newsletter = require('../models/newsletter');
 
@@ -12,7 +13,8 @@ newsletterRouter.use(bodyParser.json());
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 newsletterRouter.route('/')
-.get((req, res, next) => {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.get(cors.cors,(req, res, next) => {
 	res.render('contact-us');
 })
 .post((req, res, next) => {

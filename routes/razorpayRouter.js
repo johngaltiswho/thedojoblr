@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('./cors');
 
 const Razorpay = require('razorpay');
 var crypto = require('crypto');
@@ -18,7 +19,8 @@ const razorpayRouter = express.Router();
 razorpayRouter.use(bodyParser.json());
 
 razorpayRouter.route('/')
-.post((req, res, next) => {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.post(cors.cors,(req, res, next) => {
   var name = req.body.name
   var amount = req.body.amount;
   var email = req.body.email;
@@ -64,7 +66,8 @@ razorpayRouter.route('/')
 
 
 razorpayRouter.route('/confirmation')
-.post((req,res,next) => {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.post(cors.cors,(req,res,next) => {
 	console.log("confirmation backend")
 	console.log(req.body)
   var paymentId = req.body.razorpayPaymentId;
@@ -81,8 +84,9 @@ razorpayRouter.route('/confirmation')
 });
 
 razorpayRouter.route('/payment-confirmation')
-.post((req,res,next) => {
-  res.status = 200;
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.post(cors.cors,(req,res,next) => {
+  res.status = 200
   res.send();
   var orderId = req.body.payload.order.entity.receipt;
   var orderNo = orderId.slice(orderId.length - 3);
@@ -108,7 +112,8 @@ razorpayRouter.route('/payment-confirmation')
 });
 
 razorpayRouter.route('/payment-confirmation-paytm')
-.post((req,res,next) => {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.post(cors.cors,(req,res,next) => {
   res.status = 200;
   res.send();
   console.log("Webhook Called" + req.body)

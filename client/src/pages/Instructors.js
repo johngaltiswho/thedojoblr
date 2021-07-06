@@ -49,7 +49,15 @@ function Instructors(props) {
       </div>
       <div className="container">
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <p className="right-aligned"> Over 20 years of experience Vinayak is a <br/> <br/>
+          <p className="right-aligned"> Vinayak Shetty started training in Kyokushin Karate in ‘97.He received his 1st Dan (degree) Black belt in 2000 and in 2006, after nearly ten years of training in India, he had an opportunity to visit and train in Japan.
+          <br/>
+          <br/>
+          In 2007, he had the chance to participate in the International Instructors Camp in Fukushima, where he graded successfully to second Dan.
+          he has had considerable experience in Karate with a strong focus on karate fundamentals. He has completed the ‘uchi deshi ‘ or live in student camp with Shihan Judd Reid three times in Thailand (2016,17,18). It is a unique camp run by Judd Reid who himself had lived in Japan as a personal student of the founder of Kyokushin Karate - Mas Oyama. The camps are an immersive experience where one can truly breathe karate, training intensely three times a day in the lap of nature starting with 6 am hill sprints to finishing the day with meditation as the sun sets on the beach. In 2017 Vinayak graded to third Dan passing a rigorous grading test put forth by Shihan Judd Reid and was also awarded the same by great master Daigo Ohishi chairman of So Kyokushin and Shivaji Ganguly shihan.
+          <br/>
+          <br/>
+          He wishes to continue his training and teaching which he is passionate about, and work towards developing a high standard of Kyokushin karate with emphasis on karate fundamentals. deep emphasis on physical conditioning in Kyokushin specifically develops inner strength and ultimate union of mind, body and spirit, which is the essence of Zen. <br/> <br/>
+          <br/>
           <br/>
           </p>
         </div>

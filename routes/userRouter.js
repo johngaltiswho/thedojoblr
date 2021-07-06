@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('./cors');
 
 const User = require('../models/user');
 
@@ -12,7 +13,9 @@ userRouter.use(bodyParser.json());
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 userRouter.route('/')
-.get((req, res, next) => {
+.options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+.get(cors.cors,(req, res, next) => {
+	console.log("Entering Backend Route")
 	User.findOne({email:req.query.email})
 	.then((user) => {
 		if(!user) {
