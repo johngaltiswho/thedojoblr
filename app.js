@@ -67,14 +67,14 @@ app.use(express.urlencoded({ extended: true }));
 
 console.log(app.get('env'))
 
+if (app.get('env') === 'production') {
+  app.use('/', express.static(path.join(__dirname, '/client/build')));
+}
+
 app.use('/enquiry', enquiryRouter);
 app.use('/newsletter', newsletterRouter);
 app.use('/razorpay', razorpayRouter);
 app.use('/user', userRouter);
-
-if (app.get('env') === 'production') {
-  app.use('/', express.static(path.join(__dirname, '/client/build')));
-}
 
 if (app.get('env') === 'production') {
   app.get('*', (req, res) => {
