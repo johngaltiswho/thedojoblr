@@ -116,6 +116,18 @@ color: white;
 }
 
 @media (min-width: 768px) and (max-width: 959px) {
+  .index-header {
+    font-size: 42px;
+  }
+
+  .index-header-right {
+    font-size: 42px;
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: transparent;
+    border: 0px;
+  }
 
 }
 

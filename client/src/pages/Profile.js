@@ -17,7 +17,7 @@ function Profile(props) {
     console.log("Front end working right")
     axios.get('/user?email=' + user.email)
     .then(res => {
-      console.log(res);
+      console.log(res.data);
       setProfile({
         name: res.data.name || "",
         email: res.data.email || "",
