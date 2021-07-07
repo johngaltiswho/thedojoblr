@@ -71,16 +71,16 @@ if (app.get('env') === 'production') {
   app.use('/', express.static(path.join(__dirname, '/client/build')));
 }
 
-app.use('/enquiry', enquiryRouter);
-app.use('/newsletter', newsletterRouter);
-app.use('/razorpay', razorpayRouter);
-app.use('/user', userRouter);
-
 if (app.get('env') === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
   });
 }
+
+app.use('/enquiry', enquiryRouter);
+app.use('/newsletter', newsletterRouter);
+app.use('/razorpay', razorpayRouter);
+app.use('/user', userRouter);
 
 app.use((req, res) => {
   res.status(200).send(req.originalUrl);
