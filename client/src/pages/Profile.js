@@ -14,6 +14,7 @@ function Profile(props) {
 
   useEffect(() => {
     // console.log(user)
+    console.log("Front end working right")
     axios.get('/user?email=' + user.email)
     .then(res => {
       console.log(res);

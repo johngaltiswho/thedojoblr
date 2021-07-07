@@ -20,33 +20,33 @@ var userRouter = require('./routes/userRouter');
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// var forceSsl = function (req, res, next) {
-//     if ((req.headers['x-forwarded-proto'] !== 'https') && (app.get('env') === "'production'")) {
-//         console.log('Succesfully Redirected to HTTPS')
-//         return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
-//     } else {
-//       console.log( 'No need to re-direct to HTTPS' );
-//       next();
-//     }
-//  };
-//
-// console.log(app.get('env'))
-// app.use(forceSsl);
+var forceSsl = function (req, res, next) {
+    if ((req.headers['x-forwarded-proto'] !== 'https') && (app.get('env') === "'production'")) {
+        console.log('Succesfully Redirected to HTTPS')
+        return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
+    } else {
+      console.log( 'No need to re-direct to HTTPS' );
+      next();
+    }
+ };
 
-//code snippet for www. domain to non www. domain name
-// function wwwRedirect(req, res, next) {
-//     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
-//       console.log(req.headers.host);
-//       console.log(req.protocol);
-//       console.log(req.originalUrl);
-//       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
-//       console.log("Redirect successful")
-//     }
-//     next();
-// };
-//
-// app.set('trust proxy', true);
-// app.use(wwwRedirect);
+console.log(app.get('env'))
+app.use(forceSsl);
+
+// code snippet for www. domain to non www. domain name
+function wwwRedirect(req, res, next) {
+    if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
+      console.log(req.headers.host);
+      console.log(req.protocol);
+      console.log(req.originalUrl);
+      return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
+      console.log("Redirect successful")
+    }
+    next();
+};
+
+app.set('trust proxy', true);
+app.use(wwwRedirect);
 
 const url = process.env.MONGODB_URL_ATLAS;
 const connect = mongoose.connect(url, {
@@ -67,6 +67,11 @@ app.use(express.urlencoded({ extended: true }));
 
 console.log(app.get('env'))
 
+app.use('/enquiry', enquiryRouter);
+app.use('/newsletter', newsletterRouter);
+app.use('/razorpay', razorpayRouter);
+app.use('/user', userRouter);
+
 if (app.get('env') === 'production') {
   app.use('/', express.static(path.join(__dirname, '/client/build')));
 }
@@ -76,11 +81,6 @@ if (app.get('env') === 'production') {
     res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
   });
 }
-
-app.use('/enquiry', enquiryRouter);
-app.use('/newsletter', newsletterRouter);
-app.use('/razorpay', razorpayRouter);
-app.use('/user', userRouter);
 
 app.use((req, res) => {
   res.status(200).send(req.originalUrl);
