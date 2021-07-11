@@ -18,7 +18,8 @@ function Header(props) {
     <>
       <header>
         <Navbar bg="dark" expand="lg" variant="dark">
-          <Navbar.Brand href="/"> The Dojo
+          <Navbar.Brand href="/">
+            <img className="navbar-brand-img" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/thedojo-logo-nobg.png"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -27,7 +28,7 @@ function Header(props) {
                 <Nav.Link key = {menu.id} href={menu.link}> {menu.name} </Nav.Link>
               ))}
               {isAuthenticated ?
-                <NavDropdown title="Account" id="dropdown-menu-align-right" menuAlign="left" drop="down" align="center">
+                <NavDropdown title="Account" id="dropdown-menu-align-right" menualign="left" drop="down" align="center">
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                   <NavDropdown.Item onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Logout": "Logout"}</NavDropdown.Item>
                 </NavDropdown>

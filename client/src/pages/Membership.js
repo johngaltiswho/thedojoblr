@@ -10,7 +10,7 @@ function Membership () {
   const [show, setShow] = useState(false);
   const [membershipAmount, setMembershipAmount] = useState(0)
   const [membershipType, setMembershipType] = useState("")
-  const [profile, setProfile] = useState({name: "",email: "",phone:"",bio:""});
+  const [profile, setProfile] = useState({name: "",email: "",phone:""});
   const history = useHistory();
   const [amount, setAmount] = useState(0)
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();
@@ -25,7 +25,6 @@ function Membership () {
           name: res.data.name || "",
           email: res.data.email || "",
           phone: res.data.phone || "",
-          bio: res.data.bio || "",
         })
         loadScript("https://checkout.razorpay.com/v1/checkout.js");
       })
@@ -68,48 +67,53 @@ function Membership () {
     axios.post('/razorpay', {
       amount: membershipAmount,
       currency: "INR",
-      receipt: "1234",
       name: profile.name,
       email: profile.email,
-      orderNumber:"1234"
     })
     .then(res => {
-      console.log(res)
+      console.log(res.data)
       const options = {
-          key: "rzp_test_jXR29jYHg3XOmi", // Enter the Key ID generated from the Dashboard
-          amount: res.data.amount.toString(),
-          currency: "INR",
-          name: 'THE DOJO',
-          description: membershipType,
-          image: "https://s3.ap-south-1.amazonaws.com/stalksnspice.com/sns-logo-small.png",
-          order_id: res.data.id,
-          handler: async function (response) {
-              const data = {
-                  orderCreationId: "1234",
-                  razorpayPaymentId: response.razorpay_payment_id,
-                  razorpayOrderId: response.razorpay_order_id,
-                  razorpaySignature: response.razorpay_signature,
-              };
+        key: "rzp_test_jXR29jYHg3XOmi", // Enter the Key ID generated from the Dashboard
+        amount: res.data.amount.toString(),
+        currency: "INR",
+        name: 'THE DOJO',
+        description: membershipType,
+        image: "https://s3.ap-south-1.amazonaws.com/thedojoblr.com/thedojo-logo-nobg.png",
+        order_id: res.data.id,
+        handler: async function (response) {
+          const data = {
+            orderId: res.data.id,
+            membership: membershipType,
+            phone: profile.phone,
+            email: profile.email,
+            name: profile.name,
+            amount: membershipAmount,
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpayOrderId: response.razorpay_order_id,
+            razorpaySignature: response.razorpay_signature,
+          };
 
-              const result = await axios.post("/razorpay/confirmation", data);
-
-              alert(result.data.msg);
-          },
-          prefill: {
-              name: profile.name,
-              email: profile.email,
-              contact: profile.phone,
-          },
-          notes: {
-              address: "The Dojo BLR",
-          },
-          theme: {
-              color: "#ae8f63",
-          },
+          axios.post("/razorpay/confirmation?email=" + user.email, data)
+          .then((result) => {
+            history.push('/profile')
+          })
+          .catch(err => console.log(err.response));
+        },
+        prefill: {
+            name: profile.name,
+            email: profile.email,
+            contact: profile.phone,
+        },
+        notes: {
+            address: "The Dojo BLR",
+        },
+        theme: {
+            color: "#ae8f63",
+        },
       };
-
       const paymentObject = new window.Razorpay(options);
       paymentObject.open();
+
     })
     .catch(err => console.log(err.response));
   }

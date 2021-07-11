@@ -35,13 +35,16 @@ function TheDojoExperience(props) {
         </div>
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <p>
-            Once you enroll yourself into The Dojo Tribe, you are automatically
+            Once you enroll yourself into The Dojo Tribe, you are automatically eligible to attend all classes. With multiple classes available per day, you can ensure that you get to catch at least
+            1 class per day.
           </p>
         </div>
       </div>
       <div className="container">
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <p className="right-aligned"> 40mm Thick Padded mats made from Japanese Synthetic Rubber to absorb impact <br/> <br/>
+          <p className="right-aligned"> The training area is equipped with 40mm Thick Padded mats made from Japanese Synthetic Rubber that can absorb and cushion impact from throws, falls, etc.
+          to provide a pleasant and pain free training experience. With the walls padded with 30mm padded mats, you are even protected against accidental collisions while training.
+           <br/> <br/>
           </p>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -49,17 +52,9 @@ function TheDojoExperience(props) {
         </div>
       </div>
       <div className="container">
-        <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <h1 className="index-header-right"> WORLD CLASS FACILITIES </h1>
-        </div>
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <p className="right-aligned"> Over 20 years of experience Vinayak is a dfsfs <br/> <br/>
-          </p>
-        </div>
-      </div>
-      <div className="container">
-        <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <p className="right-aligned"> Seperate bathroom for females & shower area. <br/> <br/>
+          <p className="right-aligned"> Seperate bathrooms are provided for male & female. A spacious shower for those who have to travel to work to facilitate training in the morning sessions.
+          The mats are cleaned twice each day after intense training. <br/> <br/>
           </p>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -71,7 +66,7 @@ function TheDojoExperience(props) {
           <h1 className="index-header-right"> LEISURE SPACE FOR MEETUPS </h1>
         </div>
         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <p className="right-aligned"> High table, pantry, etc. to provide the perfect after training vibes. <br/> <br/>
+          <p className="right-aligned"> High table, pantry, etc. are put into place to provide the perfect after training vibes. <br/> <br/>
           </p>
         </div>
       </div>

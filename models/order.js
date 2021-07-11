@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const orderSchema = new Schema({
+    orderId: {
+      type: String
+    },
     name: {
       type: String,
     },
@@ -10,15 +13,6 @@ const userSchema = new Schema({
     },
     phone: {
         type: Number,
-    },
-    profilePicture: {
-      type: String,
-    },
-    dob: {
-      type: Date,
-    },
-    bio: {
-      type: String,
     },
     address:{
       street1:{
@@ -40,21 +34,22 @@ const userSchema = new Schema({
         type: String
       }
     },
+    amount: {
+      type: Number
+    },
+    tax: {
+      type: Number
+    },
     membership: {
-      membershipType: {
-        type: String
-      },
-      startDate: {
-        type: Date
-      },
-      endDate: {
-        type: Date
-      }
+      type: String
+    },
+    invoice: {
+      type: String
     }
 },{
     timestamps: true
 });
 
-var User = mongoose.model('User', userSchema);
+var Order = mongoose.model('Order', orderSchema);
 
-module.exports = User;
+module.exports = Order;

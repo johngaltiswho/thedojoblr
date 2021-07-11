@@ -31,6 +31,16 @@ body {
   text-align: center;
 }
 
+.fixed-input {
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-control:disabled, .form-control[readonly] {
+background-color: transparent!important;
+opacity: 1;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }

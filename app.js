@@ -15,6 +15,7 @@ var enquiryRouter = require('./routes/enquiryRouter');
 var newsletterRouter = require('./routes/newsletterRouter');
 var razorpayRouter = require('./routes/razorpayRouter');
 var userRouter = require('./routes/userRouter');
+var orderRouter = require('./routes/orderRouter');
 
 // //sengrid parameters
 // const sgMail = require('@sendgrid/mail');
@@ -71,6 +72,7 @@ app.use('/enquiry', enquiryRouter);
 app.use('/newsletter', newsletterRouter);
 app.use('/razorpay', razorpayRouter);
 app.use('/user', userRouter);
+app.use('/order', orderRouter);
 
 if (app.get('env') === 'production') {
   app.use('/', express.static(path.join(__dirname, '/client/build')));
@@ -109,5 +111,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   next(err);
 });
+
+process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); });
 
 module.exporst = app

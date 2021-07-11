@@ -2,7 +2,7 @@ import {React} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import '../css/HomePage.css';
 
-function Instructors(props) {
+function Artists(props) {
 
   return (
     <main>
@@ -69,4 +69,4 @@ function Instructors(props) {
   );
 }
 
-export default Instructors
+export default Artists

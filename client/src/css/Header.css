@@ -18,3 +18,11 @@ header {
 .bg-dark {
   background-image: linear-gradient(101deg, #848889, #dfe0e2 52%, #ae8f63)!important;
 }
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand-img {
+  height: 50px;
+}

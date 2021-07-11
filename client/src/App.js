@@ -12,7 +12,8 @@ import Enquiry from './pages/Enquiry'
 import Schedule from './pages/Schedule'
 import Membership from './pages/Membership'
 import GymRules from './pages/GymRules'
-import Instructors from './pages/Instructors'
+import Artists from './pages/Artists'
+import Arts from './pages/Arts'
 import TheDojoExperience from './pages/TheDojoExperience'
 import ThankYouContact from './pages/ThankYouContact'
 import ThankYouNewsletter from './pages/ThankYouNewsletter'
@@ -39,7 +40,8 @@ function App() {
             <Route path='/schedule' component={Schedule}/>
             <Route path='/membership' component={Membership}/>
             <Route path='/gym-rules' component={GymRules}/>
-            <Route path='/instructors' component={Instructors}/>
+            <Route path='/the-artists' component={Artists}/>
+            <Route path='/the-arts' component={Arts}/>
             <Route path='/the-dojo-experience' component={TheDojoExperience}/>
             <Route path='/thank-you-for-contacting-us' component={ThankYouContact}/>
             <Route path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>

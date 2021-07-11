@@ -7,33 +7,38 @@ export const MENUOPTIONS =
   },
   {
     id: 1,
-    name: "Instructors",
-    link: "/instructors"
+    name: "The Arts",
+    link: "/the-arts"
   },
   {
     id: 2,
+    name: "The Artists",
+    link: "/the-artists"
+  },
+  {
+    id: 3,
     name: "Membership",
     link: "/membership"
 
   },
   {
-    id: 3,
+    id: 4,
     name: "Schedule",
     link: "/schedule"
   },
   {
-    id: 4,
+    id: 5,
     name: "Enquiry",
     link: "/enquiry"
   },
   {
-    id: 5,
+    id: 6,
     name: "Gallery",
     link: "/gallery"
 
   },
   {
-    id: 6,
+    id: 7,
     name: "Shop",
     link: "https://fluviumwear.com/shop"
   },
