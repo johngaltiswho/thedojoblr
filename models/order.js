@@ -45,6 +45,9 @@ const orderSchema = new Schema({
     },
     invoice: {
       type: String
+    },
+    tenantId: {
+      type: String
     }
 },{
     timestamps: true

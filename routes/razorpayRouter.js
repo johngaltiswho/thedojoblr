@@ -70,42 +70,93 @@ razorpayRouter.route('/confirmation')
 .post(cors.cors,(req,res,next) => {
 	console.log(req.body)
   res.send('Payment Succesful')
-  User.findOne({email: req.query.email})
+  User.findOne({email: req.body.email})
   .then((user) => {
-    var insert = {
-      orderId: req.body.orderId,
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      "address.street1":user.address.street1,
-      "address.street2":user.address.street2 || "",
-      "address.city":user.address.city,
-      "address.state":user.address.state,
-      "address.zip":user.address.zip,
-      "address.country":user.address.country,
-      amount:req.body.amount,
-      tax:"18",
-      membership:req.body.membership,
-      invoice: "THEDOJO" + Date.now()
-    }
-    Order.create(insert)
-    .then((result) => {
-      console.log("Insert successful")
-      var endDate = new Date()
-      if(req.body.membership === "Ronin Pass") {
-        endDate.setDate(endDate.getDate() + 1);
-      } else if(req.body.membership === "Samurai Pass") {
-        endDate.setDate(endDate.getDate() + 30);
-      } else if(req.body.membership === "Zen Pass") {
-        endDate.setDate(endDate.getDate() + 365);
+    if(user) {
+      var insert = {
+        orderId: req.body.orderId,
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        "address.street1":user.address.street1,
+        "address.street2":user.address.street2 || "",
+        "address.city":user.address.city,
+        "address.state":user.address.state,
+        "address.zip":user.address.zip,
+        "address.country":user.address.country,
+        amount:req.body.amount,
+        tax:"18",
+        membership:req.body.membership,
+        invoice: "THEDOJO" + Date.now()
       }
-      User.updateOne({
-        "membership.endDate":endDate
-      })
-      .then((user) => {
-        console.log("user profile succesfully updated with membership end date")
+      Order.create(insert)
+      .then((result) => {
+        console.log("Insert successful")
+        var endDate = user.membership.endDate
+        if(req.body.membership === "Ronin Pass") {
+          endDate.setDate(endDate.getDate() + 1);
+        } else if(req.body.membership === "Samurai Pass") {
+          endDate.setDate(endDate.getDate() + 30);
+        } else if(req.body.membership === "Paladin Pass") {
+          endDate.setDate(endDate.getDate() + 120);
+        } else if(req.body.membership === "Zen Pass") {
+          endDate.setDate(endDate.getDate() + 365);
+        }
+        User.updateOne({
+          email: req.body.email
+        },{
+          "membership.endDate":endDate
+        })
+        .then((user) => {
+          console.log("user profile succesfully updated with membership end date")
+        }, (err) => next(err))
       }, (err) => next(err))
-    }, (err) => next(err))
+    } else {
+      console.log("User not found.")
+      var insert = {
+        orderId: req.body.orderId,
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        "address.street1":"#403, 22nd Cross, 2nd Sector",
+        "address.street2":"",
+        "address.city":"Bangalore",
+        "address.state":"Karnataka",
+        "address.zip":"560102",
+        "address.country":"India",
+        amount:req.body.amount,
+        tax:"18",
+        membership:req.body.membership,
+        invoice: "THEDOJO" + Date.now()
+      }
+      Order.create(insert)
+      .then((result) => {
+        console.log("Insert successful")
+        var endDate = new Date()
+        if(req.body.membership === "Ronin Pass") {
+          endDate.setDate(endDate.getDate() + 1);
+        } else if(req.body.membership === "Samurai Pass") {
+          endDate.setDate(endDate.getDate() + 30);
+        } else if(req.body.membership === "Paladin Pass") {
+          endDate.setDate(endDate.getDate() + 120);
+        } else if(req.body.membership === "Zen Pass") {
+          endDate.setDate(endDate.getDate() + 365);
+        }
+        User.updateOne({
+          name: req.body.name,
+          email: req.body.email,
+          phone: req.body.phone,
+        },{
+          "membership.endDate":endDate,
+          "membership.membershipType": req.body.membership
+        },{
+          upsert: 1
+        })
+        .then((user) => {
+          console.log("new user profile succesfully created & updated with membership end date")
+        }, (err) => next(err))
+      }, (err) => next(err))
+    }
   }, (err) => next(err))
   .catch((error) => {
     console.log('', error);

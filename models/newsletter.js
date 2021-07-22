@@ -15,6 +15,9 @@ const newsletterSchema = new Schema({
         trim: true,
         lowercase:true,
         validate: [validateEmail, 'Please fill a valid email address!' ]
+    },
+    tenantId: {
+      type: String
     }
 },{
     timestamps: true

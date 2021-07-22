@@ -17,7 +17,9 @@ import Arts from './pages/Arts'
 import TheDojoExperience from './pages/TheDojoExperience'
 import ThankYouContact from './pages/ThankYouContact'
 import ThankYouNewsletter from './pages/ThankYouNewsletter'
+import OrderConfirmation from './pages/OrderConfirmation'
 import Profile from './pages/Profile'
+import AllUsers from './pages/AllUsers'
 import ContactInfo from './pages/ContactInfo'
 import FAQ from './pages/FAQ'
 
@@ -37,6 +39,7 @@ function App() {
             <Route exact path='/' component={Home}/>
             <Route path='/privacy-policy' component={PrivacyPolicy}/>
             <Route path='/enquiry' component={Enquiry}/>
+            <Route path='/all-users' component={AllUsers}/>
             <Route path='/schedule' component={Schedule}/>
             <Route path='/membership' component={Membership}/>
             <Route path='/gym-rules' component={GymRules}/>
@@ -45,6 +48,7 @@ function App() {
             <Route path='/the-dojo-experience' component={TheDojoExperience}/>
             <Route path='/thank-you-for-contacting-us' component={ThankYouContact}/>
             <Route path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
+            <Route path='/order-confirmation' component={OrderConfirmation}/>
             <Route path='/frequently-asked-questions' component={FAQ}/>
             <ProtectedRoute path='/profile' component={Profile}/>
             <ProtectedRoute path='/contact-info' component={ContactInfo}/>

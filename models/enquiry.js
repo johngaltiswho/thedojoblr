@@ -41,6 +41,9 @@ const enquirySchema = new Schema({
       type: String,
       required: true,
       required: 'Please enter a message'
+    },
+    tenantId: {
+      type: String
     }
 },{
     timestamps: true

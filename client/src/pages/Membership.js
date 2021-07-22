@@ -52,6 +52,8 @@ function Membership () {
       setMembershipType("Ronin Pass")
     } else if (e.target.value === "4999") {
       setMembershipType("Samurai Pass")
+    } else if (e.target.value === "13999") {
+      setMembershipType("Paladin Pass")
     } else if (e.target.value === "39999") {
       setMembershipType("Zen Pass")
     }
@@ -95,7 +97,7 @@ function Membership () {
 
           axios.post("/razorpay/confirmation?email=" + user.email, data)
           .then((result) => {
-            history.push('/profile')
+            history.push('/order-confirmation')
           })
           .catch(err => console.log(err.response));
         },
@@ -224,10 +226,29 @@ function Membership () {
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>Month to month agreement</ListGroupItem>
                   <ListGroupItem>Unlimited training access to all classes</ListGroupItem>
-                  <ListGroupItem>5% discount on all Fluvium Merchandize</ListGroupItem>
+                  <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                   <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4999} active>
+                    Enroll
+                  </Button>
+                </Card.Body>
+              </Card>
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <Card.Body>
+                  <Card.Title> Paladin (Quarterly) Pass <br/> <br/><strong><h3> Rs.13999 </h3> </strong>
+                  </Card.Title>
+                  <Card.Text>
+                    A good battle plan that you act on today can be better than a perfect one tomorrow!
+                  </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>Quarterly agreement</ListGroupItem>
+                  <ListGroupItem>Unlimited training access to all classes</ListGroupItem>
+                  <ListGroupItem>5% discount on all Fluvium Merchandize</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={13999} active>
                     Enroll
                   </Button>
                 </Card.Body>

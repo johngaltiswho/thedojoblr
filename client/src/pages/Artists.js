@@ -11,24 +11,22 @@ function Artists(props) {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/carousel/rendering1.jpeg"
-              alt="First slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/artists/uma-marcelo.jpeg"
+              alt="Uma Maheshwar Reddy"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Uma Maheshwar Reddy</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/carousel/rendering2.jpeg"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/artists/vinayak1.jpeg"
               alt="Second slide"
             />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Vinayak Shetty</h3>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

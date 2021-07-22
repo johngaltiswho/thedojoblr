@@ -62,6 +62,15 @@
 
 }
 
+.card-deck .profile-card {
+  flex: auto!important;
+  margin-bottom: 15px;
+}
+
+.profile-deck {
+  justify-content: center;
+}
+
 @media (min-width: 1200px) {
 }
 

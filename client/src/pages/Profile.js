@@ -132,9 +132,9 @@ function Profile(props) {
 
   const orderCards = (
     <div className="full-width">
-      <CardDeck >
+      <CardDeck className="profile-deck">
         {orders.map((order, i) => (
-          <Card key={order.orderId} className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <Card key={order.orderId} className="profile-card col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <Card.Body>
               <Card.Title>{order.membership} <br/> <br/><strong><h3> Rs.{order.amount} </h3> </strong>
               </Card.Title>
@@ -150,7 +150,7 @@ function Profile(props) {
         ))}
       </CardDeck>
     </div>
-  )
+  );
 
   return (
     <main>

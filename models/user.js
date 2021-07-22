@@ -49,8 +49,9 @@ const userSchema = new Schema({
       },
       endDate: {
         type: Date
-      }
-    }
+      },
+    },
+    tenantId: String
 },{
     timestamps: true
 });
