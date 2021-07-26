@@ -51,7 +51,12 @@ const userSchema = new Schema({
         type: Date
       },
     },
-    tenantId: String
+    tenantId:  {
+      type: String
+    },
+    role: {
+      type: String
+    }
 },{
     timestamps: true
 });

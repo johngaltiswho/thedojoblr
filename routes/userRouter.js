@@ -61,6 +61,25 @@ userRouter.route('/')
 		res.send(userInfo)
 	}, (err) => next(err))
 	.catch((err) => next(err));
+})
+.put((req, res, next) => {
+	console.log(req.body)
+	console.log(req.query.email)
+	User.findOneAndUpdate({
+		email: req.query.email
+	},{
+		$set: {
+			paymentStatus: req.body.paymentStatus,
+		},
+	},{
+	  new: true
+	})
+	.then((userInfo) => {
+		console.log("successfully updated user")
+		console.log(userInfo)
+		res.json(userInfo)
+	}, (err) => next(err))
+	.catch((err) => next(err));
 });
 
 userRouter.route('/all-users')

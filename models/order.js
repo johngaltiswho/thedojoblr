@@ -48,6 +48,9 @@ const orderSchema = new Schema({
     },
     tenantId: {
       type: String
+    },
+    paymentStatus: {
+      type: String
     }
 },{
     timestamps: true

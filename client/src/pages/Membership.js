@@ -47,14 +47,14 @@ function Membership () {
   }
 
   const toggleMembership = (e) => {
-    console.log(e.target.value === "499")
+    console.log(e.target.value === "899")
     if(e.target.value === "499") {
       setMembershipType("Ronin Pass")
-    } else if (e.target.value === "4999") {
+    } else if (e.target.value === "4799") {
       setMembershipType("Samurai Pass")
     } else if (e.target.value === "13999") {
       setMembershipType("Paladin Pass")
-    } else if (e.target.value === "39999") {
+    } else if (e.target.value === "49999") {
       setMembershipType("Zen Pass")
     }
     console.log(membershipType)
@@ -198,7 +198,7 @@ function Membership () {
             <CardDeck>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
-                  <Card.Title>Ronin (Day) Pass <br/> <br/><strong><h3> Rs.499 </h3> </strong>
+                  <Card.Title>Ronin (Day) Pass <br/> <br/><strong><h3> Rs.899 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
                     It's easy to stand with the crowd. It takes courage to stand alone.
@@ -210,14 +210,14 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={499} active>
+                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={899} active>
                     Enroll
                   </Button>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
-                  <Card.Title> Samurai (Month) Pass <br/> <br/><strong><h3> Rs.4999 </h3> </strong>
+                  <Card.Title> Samurai (Month) Pass <br/> <br/><strong><h3> Rs.4799 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
                     Only those who attempt the absurd can acheive the impossible!
@@ -229,7 +229,7 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4999} active>
+                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4799} active>
                     Enroll
                   </Button>
                 </Card.Body>
@@ -255,7 +255,7 @@ function Membership () {
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
-                  <Card.Title> Zen (Annual) Pass <br/> <br/><strong><h3> Rs.39999 </h3> </strong>
+                  <Card.Title> Zen (Annual) Pass <br/> <br/><strong><h3> Rs.49999 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
                     Cowards never start. The weak never finish. Winners never quit.
@@ -267,7 +267,7 @@ function Membership () {
                   <ListGroupItem>10% discount on all Fluvium Merchandize</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={39999} active>
+                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={49999} active>
                     Enroll
                   </Button>
                 </Card.Body>

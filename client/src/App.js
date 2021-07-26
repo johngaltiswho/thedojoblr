@@ -20,6 +20,7 @@ import ThankYouNewsletter from './pages/ThankYouNewsletter'
 import OrderConfirmation from './pages/OrderConfirmation'
 import Profile from './pages/Profile'
 import AllUsers from './pages/AllUsers'
+import AdminUserProfile from './pages/AdminUserProfile'
 import ContactInfo from './pages/ContactInfo'
 import FAQ from './pages/FAQ'
 
@@ -37,21 +38,22 @@ function App() {
         <Header/>
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/privacy-policy' component={PrivacyPolicy}/>
-            <Route path='/enquiry' component={Enquiry}/>
-            <Route path='/all-users' component={AllUsers}/>
-            <Route path='/schedule' component={Schedule}/>
-            <Route path='/membership' component={Membership}/>
-            <Route path='/gym-rules' component={GymRules}/>
-            <Route path='/the-artists' component={Artists}/>
-            <Route path='/the-arts' component={Arts}/>
-            <Route path='/the-dojo-experience' component={TheDojoExperience}/>
-            <Route path='/thank-you-for-contacting-us' component={ThankYouContact}/>
-            <Route path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
-            <Route path='/order-confirmation' component={OrderConfirmation}/>
-            <Route path='/frequently-asked-questions' component={FAQ}/>
-            <ProtectedRoute path='/profile' component={Profile}/>
-            <ProtectedRoute path='/contact-info' component={ContactInfo}/>
+            <Route exact path='/privacy-policy' component={PrivacyPolicy}/>
+            <Route exact path='/enquiry' component={Enquiry}/>
+            <Route exact path='/schedule' component={Schedule}/>
+            <Route exact path='/membership' component={Membership}/>
+            <Route exact path='/gym-rules' component={GymRules}/>
+            <Route exact path='/the-artists' component={Artists}/>
+            <Route exact path='/the-arts' component={Arts}/>
+            <Route exact path='/the-dojo-experience' component={TheDojoExperience}/>
+            <Route exact path='/thank-you-for-contacting-us' component={ThankYouContact}/>
+            <Route exact path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
+            <Route exact path='/order-confirmation' component={OrderConfirmation}/>
+            <Route exact path='/frequently-asked-questions' component={FAQ}/>
+            <ProtectedRoute exact path='/users' component={AllUsers}/>
+            <ProtectedRoute exact path='/profile' component={Profile}/>
+            <ProtectedRoute exact path='/contact-info' component={ContactInfo}/>
+            <ProtectedRoute path='/users/:email' component={AdminUserProfile}/>
           </Switch>
         <Footer/>
       </div>
