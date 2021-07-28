@@ -33,12 +33,6 @@ export const MENUOPTIONS =
   },
   {
     id: 6,
-    name: "Gallery",
-    link: "/gallery"
-
-  },
-  {
-    id: 7,
     name: "Shop",
     link: "https://fluviumwear.com/shop"
   },

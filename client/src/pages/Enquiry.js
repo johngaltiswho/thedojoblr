@@ -94,7 +94,7 @@ function Enquiry(props) {
             <p>
               <strong>Customer Service Enquires:</strong>
               <br/>
-              Email ID: umamaheshwar@stalksnspice.com
+              Email ID: hello@thedojoblr.com
               <br/>
               <strong>Mailing Address:</strong>
               <br/>

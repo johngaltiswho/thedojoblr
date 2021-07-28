@@ -56,7 +56,7 @@ function PrivacyPolicy(props) {
             As described above, we use your Personal Information to provide you with targeted advertisements or marketing communications
             we believe may be of interest to you.  For more information about how targeted advertising works, you can visit the
             Network Advertising Initiative’s (NAI) educational page at http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work.
-            You can opt out of targeted advertising by emailing us at info@thedojoblr.com
+            You can opt out of targeted advertising by emailing us at hello@thedojoblr.com
             Additionally, you can opt out of some of these services by visiting the Digital Advertising Alliance’s opt-out portal at:  http://optout.aboutads.info/.
             <br/>
             <br/>
@@ -77,7 +77,7 @@ function PrivacyPolicy(props) {
             <br/>
             <strong>CONTACT US</strong>
             <br/>
-            For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at info@thedojoblr.com or by mail using the details provided below:
+            For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at hello@thedojoblr.com or by mail using the details provided below:
             #403, 22nd Cross, 2nd Sector, HSR Layout, Bangalore, 560102, Bangalore, KA, 560102, India.
             <br/>
             <br/>

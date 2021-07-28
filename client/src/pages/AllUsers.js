@@ -8,10 +8,12 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 
 function Users(props) {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
+  const [disabled, setDisabled] = useState(0);
   const history = useHistory();
   const { user } = useAuth0();
   const [paymentStatus, setPaymentStatus] = useState("");
+  const [newCustomer, setNewCustomer] = useState({name: "",phone:"",email:"", endDate: "", status:""});
   const [isEditing, setEditing] = useState(false)
   const [editRow, setEditRow] = useState(null)
   const [role, setRole] = useState("")
@@ -36,6 +38,43 @@ function Users(props) {
     })
     .catch(err => console.log(err));
   }, []);
+
+  const handleCustomer = e => {
+    const { name, value } = e.target;
+    setNewCustomer(prevState => ({
+        ...prevState,
+        [name]: value
+    }));
+  };
+
+  const customerUpdate = (event) => {
+    event.preventDefault();
+    setDisabled(1)
+    setTimeout(function(){
+     setDisabled(0);
+    }.bind(this),10000);
+    axios.post('/user?tenantId=thedojo', {
+      name: newCustomer.name,
+      phone: newCustomer.phone,
+      email: newCustomer.email,
+      startDate: Date.now(),
+      endDate: newCustomer.endDate,
+      status: newCustomer.status,
+     })
+    .then(res => {
+      console.log("Successfully added pending items to database")
+      setUsers(res.data);
+      setNewCustomer(prevState => ({
+          ...prevState,
+          name: "",
+          phone: "",
+          email: "",
+          endDate: "",
+          status: ""
+      }));
+    })
+    .catch(err => console.log(err));
+  };
 
   const editRowStatusFunc = (e) => {
     setEditing(true);
@@ -88,6 +127,32 @@ function Users(props) {
             <td className="section-hide"> { moment(new Date()).isAfter(moment(user.membership.endDate)) ? "INACTIVE" : "ACTIVE"}</td>
           </tr>
         ))}
+        <tr>
+          <td className="section-hide"></td>
+          <td>
+            <label><input  className="tracking-input" name="name" value={newCustomer.name || ""} onChange={handleCustomer} /> </label>
+          </td>
+          <td>
+            <label><input  className="tracking-input" name="phone" value={newCustomer.phone || ""}  onChange={handleCustomer}/> </label>
+          </td>
+          <td>
+            <label><input  className="tracking-input" name="email" value={newCustomer.email || ""}  onChange={handleCustomer}/> </label>
+          </td>
+          <td>
+            {moment(new Date()).format('DD-MM-YYYY')}
+          </td>
+          <td>
+            <label><input  className="tracking-input" name="lastContacted" value={newCustomer.endDate || ""}  onChange={handleCustomer}/> </label>
+          </td>
+          <td>
+            <label><input  className="tracking-input" name="salesRep" value={newCustomer.status || ""}  onChange={handleCustomer}/> </label>
+          </td>
+          <td>
+            <div className = "iuo">
+              <input className = "btn btn-large btn-primary" type='submit' value='&#10004;' onClick={customerUpdate}  disabled={disabled} />
+            </div>
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>

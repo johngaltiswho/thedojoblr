@@ -55,7 +55,7 @@ function Footer(props) {
                 <Link to="/enquiry"><h5> Enquiry </h5></Link>
               </li>
               <li className="space">
-                <Link to="/instructors"><h5> Instrutors </h5></Link>
+                <Link to="/the-artists"><h5> Artists </h5></Link>
               </li>
             </ul>
           </div>

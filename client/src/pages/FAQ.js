@@ -11,7 +11,7 @@ function PrivacyPolicy(props) {
        </div>
        <div class="textcenter">
         <p>
-          Following are the links to most common FAQ's. For any query which is not addressed in the FAQ's please feel free to email us at umamaheshwar@stalksnspice.com
+          Following are the links to most common FAQ's. For any query which is not addressed in the FAQ's please feel free to email us at hello@thedojoblr.com
           <br/>
           <br/>
           <strong>How do I contact you?</strong>
