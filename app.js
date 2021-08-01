@@ -38,6 +38,7 @@ function forceSsl(req, res, next) {
 
 // code snippet for www. domain to non www. domain name
 function wwwRedirect(req, res, next) {
+  console.log("HeaderHost:" + req.headers.host.slice(0, 4))
     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
       console.log(req.headers.host);
       console.log(req.protocol);
@@ -49,6 +50,11 @@ function wwwRedirect(req, res, next) {
 };
 
 app.set('trust proxy', true);
+
+// app.use((req, res, next) => {
+//     req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
+// })
+
 
 app.use(wwwRedirect);
 
