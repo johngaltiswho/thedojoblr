@@ -12,6 +12,7 @@ function Footer(props) {
     e.preventDefault();
     axios.post('/newsletter', {
       email: email,
+      tenantId: 'thedojo'
     })
     .then(res => {
       setEmail("")

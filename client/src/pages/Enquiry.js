@@ -23,6 +23,7 @@ function Enquiry(props) {
       phone: enquiry.phone,
       sub: enquiry.sub,
       msg: enquiry.msg,
+      tenantId: "thedojo"
     })
     .then(res => {
       setEnquiry(prevState => ({

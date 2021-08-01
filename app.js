@@ -21,8 +21,11 @@ var orderRouter = require('./routes/orderRouter');
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-var forceSsl = function (req, res, next) {
-    if ((req.headers['x-forwarded-proto'] !== 'https') && (app.get('env') === "'production'")) {
+function forceSsl(req, res, next) {
+  console.log("Entering ForceSSL")
+  console.log("Protocol:" + req.headers['x-forwarded-proto'])
+  console.log("environment: " + app.get('env'))
+    if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
         console.log('Succesfully Redirected to HTTPS')
         return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
     } else {
@@ -30,9 +33,8 @@ var forceSsl = function (req, res, next) {
       next();
     }
  };
+ app.use(forceSsl);
 
-console.log(app.get('env'))
-app.use(forceSsl);
 
 // code snippet for www. domain to non www. domain name
 function wwwRedirect(req, res, next) {
@@ -47,7 +49,9 @@ function wwwRedirect(req, res, next) {
 };
 
 app.set('trust proxy', true);
+
 app.use(wwwRedirect);
+
 
 const url = process.env.MONGODB_URL_ATLAS;
 const connect = mongoose.connect(url, {
@@ -65,8 +69,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-console.log(app.get('env'))
 
 app.use('/enquiry', enquiryRouter);
 app.use('/newsletter', newsletterRouter);

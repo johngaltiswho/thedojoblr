@@ -87,7 +87,8 @@ razorpayRouter.route('/confirmation')
         amount:req.body.amount,
         tax:"18",
         membership:req.body.membership,
-        invoice: "THEDOJO" + Date.now()
+        invoice: "THEDOJO" + Date.now(),
+        tenantId: 'thedojo'
       }
       Order.create(insert)
       .then((result) => {
@@ -127,7 +128,8 @@ razorpayRouter.route('/confirmation')
         amount:req.body.amount,
         tax:"18",
         membership:req.body.membership,
-        invoice: "THEDOJO" + Date.now()
+        invoice: "THEDOJO" + Date.now(),
+        tenantId: "thedojo"
       }
       Order.create(insert)
       .then((result) => {
