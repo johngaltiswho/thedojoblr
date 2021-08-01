@@ -13,7 +13,7 @@ function Users(props) {
   const history = useHistory();
   const { user } = useAuth0();
   const [paymentStatus, setPaymentStatus] = useState("");
-  const [newCustomer, setNewCustomer] = useState({name: "",phone:"",email:"", endDate: "", status:""});
+  const [newCustomer, setNewCustomer] = useState({name: "",phone:"",email:""});
   const [isEditing, setEditing] = useState(false)
   const [editRow, setEditRow] = useState(null)
   const [role, setRole] = useState("")
@@ -53,24 +53,23 @@ function Users(props) {
     setTimeout(function(){
      setDisabled(0);
     }.bind(this),10000);
+    console.log(newCustomer)
     axios.post('/user?tenantId=thedojo', {
       name: newCustomer.name,
       phone: newCustomer.phone,
       email: newCustomer.email,
       startDate: Date.now(),
-      endDate: newCustomer.endDate,
-      status: newCustomer.status,
+      adminPage: 1
      })
     .then(res => {
       console.log("Successfully added pending items to database")
-      setUsers(res.data);
+      console.log(res.data)
+      // users.push(res.data);
       setNewCustomer(prevState => ({
           ...prevState,
           name: "",
           phone: "",
           email: "",
-          endDate: "",
-          status: ""
       }));
     })
     .catch(err => console.log(err));
@@ -123,29 +122,29 @@ function Users(props) {
             <td className="section-hide"> { user.phone }</td>
             <td className="section-hide"> { user.email }</td>
             <td className="section-hide"> { moment(user.createdAt).format('DD-MM-YYYY') }</td>
-            <td className="section-hide"> { moment(user.membership.endDate).format('DD-MM-YYYY') }</td>
+            <td className="section-hide"> { user.membership.endDate ? moment(user.membership.endDate).format('DD-MM-YYYY') : "NO ORDER PLACED" }</td>
             <td className="section-hide"> { moment(new Date()).isAfter(moment(user.membership.endDate)) ? "INACTIVE" : "ACTIVE"}</td>
           </tr>
         ))}
         <tr>
           <td className="section-hide"></td>
           <td>
-            <label><input  className="tracking-input" name="name" value={newCustomer.name || ""} onChange={handleCustomer} /> </label>
+            <label><input  className="form-control" name="name" value={newCustomer.name || ""} onChange={handleCustomer} /> </label>
           </td>
           <td>
-            <label><input  className="tracking-input" name="phone" value={newCustomer.phone || ""}  onChange={handleCustomer}/> </label>
+            <label><input  className="form-control" name="phone" value={newCustomer.phone || ""}  onChange={handleCustomer}/> </label>
           </td>
           <td>
-            <label><input  className="tracking-input" name="email" value={newCustomer.email || ""}  onChange={handleCustomer}/> </label>
+            <label><input  className="form-control" name="email" value={newCustomer.email || ""}  onChange={handleCustomer}/> </label>
           </td>
           <td>
             {moment(new Date()).format('DD-MM-YYYY')}
           </td>
           <td>
-            <label><input  className="tracking-input" name="lastContacted" value={newCustomer.endDate || ""}  onChange={handleCustomer}/> </label>
+            ---------
           </td>
           <td>
-            <label><input  className="tracking-input" name="salesRep" value={newCustomer.status || ""}  onChange={handleCustomer}/> </label>
+            INACTIVE
           </td>
           <td>
             <div className = "iuo">

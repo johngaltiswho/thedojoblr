@@ -8,7 +8,7 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 
 function Profile(props) {
-  const [profile, setProfile] = useState({name: "",email: "",phone:"",bio:"", endDate:"", startDate:""});
+  const [profile, setProfile] = useState({name: "",email: "",phone:"",bio:"", endDate:"", startDate:"", role:""});
   const [address, setAddress] = useState({street1: "", city:"",state:"",zip:"",country:""})
   const [orders, setOrders] = useState([])
   const history = useHistory();
@@ -27,7 +27,7 @@ function Profile(props) {
         phone: res.data.phone || "",
         bio: res.data.bio || "",
         endDate: res.data.membership.endDate || "",
-        startDate: res.data.createdAt || ""
+        startDate: res.data.createdAt || "",
       })
       if(res.data.address) {
         setAddress({
@@ -139,7 +139,7 @@ function Profile(props) {
               <Card.Title>{order.membership} <br/> <br/><strong><h3> Rs.{order.amount} </h3> </strong>
               </Card.Title>
               <Card.Text>
-                <h3> <strong> PAID </strong> </h3>
+                <h3> <strong> {order.paymentStatus ? order.paymentStatus : "UNPAID"} </strong> </h3>
               </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">

@@ -85,8 +85,8 @@ function Footer(props) {
               <p className="footer-header">© The Dojo. All Rights Reserved.</p>
               <div className="oneline-footer">
                 <ul className="no-bullets flex-row">
-                  <li><a href="https://www.instagram.com/thedojoblr/" title="Instagram"><img src="https://website-essentials.s3.ap-south-1.amazonaws.com/instagram-white-background.png" data-src="https://website-essentials.s3.ap-south-1.amazonaws.com/instagram-white-background.png" alt="Instagram" title="Instagram" className="social"/></a></li>
-                  <li><a href="https://www.youtube.com/channel/UCMbYkeCCQ5VvQN54maOvVKg" title="Youtube"><img src="https://assets.fluviumwear.com/youtube.png" data-src="https://assets.fluviumwear.com/youtube.png" alt="Youtube" title="Youtube" className="social"/></a></li>
+                  <li><a href="https://www.instagram.com/thedojoblr/" title="Instagram" target= "_blank"><img src="https://website-essentials.s3.ap-south-1.amazonaws.com/instagram-white-background.png" data-src="https://website-essentials.s3.ap-south-1.amazonaws.com/instagram-white-background.png" alt="Instagram" title="Instagram" className="social"/></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCMbYkeCCQ5VvQN54maOvVKg" title="Youtube" target= "_blank"><img src="https://assets.fluviumwear.com/youtube.png" data-src="https://assets.fluviumwear.com/youtube.png" alt="Youtube" title="Youtube" className="social"/></a></li>
                 </ul>
               </div>
             </div>

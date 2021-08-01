@@ -48,7 +48,7 @@ function Membership () {
 
   const toggleMembership = (e) => {
     console.log(e.target.value === "899")
-    if(e.target.value === "499") {
+    if(e.target.value === "899") {
       setMembershipType("Ronin Pass")
     } else if (e.target.value === "4799") {
       setMembershipType("Samurai Pass")

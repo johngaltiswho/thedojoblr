@@ -12,6 +12,9 @@ function AdminUserProfile(props) {
   const [profile, setProfile] = useState({name: "",email: "",phone:"",bio:"", endDate:"", startDate:""});
   const [address, setAddress] = useState({street1: "", city:"",state:"",zip:"",country:""})
   const [orders, setOrders] = useState([])
+  const [order, createOrder] = useState({amount:"", tax:"", membership:"", invoice:"", paymentStatus:""})
+  const [role, setRole] = useState("")
+
   const history = useHistory();
   const { user } = useAuth0();
   const [value, onChange] = useState(new Date());
@@ -22,6 +25,8 @@ function AdminUserProfile(props) {
     axios.get('/user?email=' + props.match.params.email)
     .then(res => {
       console.log(res.data);
+      setRole(res.data.role)
+
       setProfile({
         name: res.data.name || "",
         email: res.data.email || "",
@@ -48,6 +53,14 @@ function AdminUserProfile(props) {
     })
     .catch(err => console.log(err));
   }, []);
+
+  const handleCreateOrder = e => {
+    const { name, value } = e.target;
+    createOrder(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   const handleSetProfile = e => {
     const { name, value } = e.target;
@@ -133,7 +146,36 @@ function AdminUserProfile(props) {
 
   const orderCards = (
     <div className="full-width">
-      <CardDeck className="profile-deck">
+    <CardDeck className="profile-deck">
+      {role === "admin" ?
+        <Card className="profile-card col-lg-3 col-md-12 col-sm-12 col-xs-12">
+          <Card.Body>
+            <Card.Title>
+              <select className='' type="text" name="membership" value={order.value} onChange={handleCreateOrder}>
+                <option value=""> - </option>
+                <option value="Ronin Pass"> Ronin Pass </option>
+                <option value="Samurai Pass"> Samurai Pass </option>
+                <option value="Paladin Pass"> Paladin Pass </option>
+                <option value="Zen Pass"> Zen Pass </option>
+              </select>
+            </Card.Title>
+            <Card.Text>
+              <select className='' type="text" name={user.email} onChange={handleCreateOrder}>
+                <option value=""> - </option>
+                <option value="PAID"> PAID </option>
+                <option value="UNPAID"> UNPAID </option>
+              </select>
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>{moment(order.createdAt).format("DD-MMM-YY")}</ListGroupItem>
+            <ListGroupItem>{order.orderId}</ListGroupItem>
+          </ListGroup>
+        </Card>
+        :
+        ""
+      }
+
         {orders.map((order, i) => (
           <Card key={order.orderId} className="profile-card col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <Card.Body>

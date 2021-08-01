@@ -103,21 +103,21 @@ function Schedule(props) {
               <tr>
                 <td className="align-middle">19:00pm</td>
                 <td>
-                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</p>
+                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Ikken</p>
                   <div className="margin-10px-top font-size14">19:00-20:30</div>
                   <div className="font-size13 text-light-gray">Vinayak Shetty</div>
                 </td>
                 <td className="bg-light-gray">
                 </td>
                 <td>
-                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</p>
+                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Ikken</p>
                   <div className="margin-10px-top font-size14">19:00-20:30</div>
                   <div className="font-size13 text-light-gray">Vinayak Shetty</div>
                 </td>
                 <td className="bg-light-gray">
                 </td>
                 <td>
-                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</p>
+                  <p className="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Ikken</p>
                   <div className="margin-10px-top font-size14">19:00-20:30</div>
                   <div className="font-size13 text-light-gray">Vinayak Shetty</div>
                 </td>

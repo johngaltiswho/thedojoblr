@@ -88,6 +88,7 @@ razorpayRouter.route('/confirmation')
         tax:"18",
         membership:req.body.membership,
         invoice: "THEDOJO" + Date.now(),
+        paymentStatus: "PAID",
         tenantId: 'thedojo'
       }
       Order.create(insert)
