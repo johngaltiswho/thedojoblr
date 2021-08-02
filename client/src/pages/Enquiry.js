@@ -95,11 +95,13 @@ function Enquiry(props) {
             <p>
               <strong>Customer Service Enquires:</strong>
               <br/>
+              Phone No: 9972508604
+              <br/>
               Email ID: hello@thedojoblr.com
               <br/>
               <strong>Mailing Address:</strong>
               <br/>
-              #403, 22nd Cross, 2nd Sector
+              #403, 3rd Floor, 22nd Cross, 2nd Sector
               <br/>
               HSR Layout, Bangalore, India, 560102
               <br/>

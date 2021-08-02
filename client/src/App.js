@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Loading from './components/Loading'
 import Home from './pages/HomePage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
 import Enquiry from './pages/Enquiry'
 import Schedule from './pages/Schedule'
 import Membership from './pages/Membership'
@@ -22,6 +23,7 @@ import Profile from './pages/Profile'
 import AllUsers from './pages/AllUsers'
 import AdminUserProfile from './pages/AdminUserProfile'
 import ContactInfo from './pages/ContactInfo'
+import TermsOfService from './pages/TermsOfService'
 import FAQ from './pages/FAQ'
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/privacy-policy' component={PrivacyPolicy}/>
+            <Route exact path='/refund-policy' component={RefundPolicy}/>
             <Route exact path='/enquiry' component={Enquiry}/>
             <Route exact path='/schedule' component={Schedule}/>
             <Route exact path='/membership' component={Membership}/>
@@ -49,6 +52,7 @@ function App() {
             <Route exact path='/thank-you-for-contacting-us' component={ThankYouContact}/>
             <Route exact path='/thank-you-for-signing-up' component={ThankYouNewsletter}/>
             <Route exact path='/order-confirmation' component={OrderConfirmation}/>
+            <Route exact path='/terms-of-service' component={TermsOfService}/>
             <Route exact path='/frequently-asked-questions' component={FAQ}/>
             <ProtectedRoute exact path='/users' component={AllUsers}/>
             <ProtectedRoute exact path='/profile' component={Profile}/>

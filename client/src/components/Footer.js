@@ -34,10 +34,13 @@ function Footer(props) {
                 <Link to="/privacy-policy"><h5> Privacy Policy </h5></Link>
               </li>
               <li className="space">
+                <Link to="/terms-of-service"><h5> Terms of Service </h5></Link>
+              </li>
+              <li className="space">
                 <Link to="/enquiry"><h5> Enquiry </h5></Link>
               </li>
               <li className="space">
-                <Link to="/membership"><h5> Membership </h5></Link>
+                <Link to="/refund-policy"><h5> Refund Policy </h5></Link>
               </li>
               <li className="space">
                 <Link to="/schedule"><h5> Schedule </h5></Link>
@@ -57,6 +60,9 @@ function Footer(props) {
               </li>
               <li className="space">
                 <Link to="/the-artists"><h5> Artists </h5></Link>
+              </li>
+              <li className="space">
+                <Link to="/membership"><h5> Membership </h5></Link>
               </li>
             </ul>
           </div>
