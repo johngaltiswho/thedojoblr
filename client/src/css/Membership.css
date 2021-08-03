@@ -6,6 +6,14 @@
   color: black;
 }
 
+.none {
+  display: none;
+}
+
+.qrcode {
+  height: 200px;
+}
+
 .card-deck .card {
   background: #dfe0e2;
   padding: 15px;

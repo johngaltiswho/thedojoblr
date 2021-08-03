@@ -1,6 +1,6 @@
 import {React, useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import {Card, CardDeck, ListGroup, ListGroupItem, Button, Modal} from 'react-bootstrap';
+import {Card, CardDeck, ListGroup, ListGroupItem, Button, Modal, Image} from 'react-bootstrap';
 import '../css/Membership.css';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
@@ -210,9 +210,10 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={899} active>
+                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={899} active>
                     Enroll
                   </Button>
+                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -229,9 +230,10 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4799} active>
+                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4799} active>
                     Enroll
                   </Button>
+                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/samurai-4799.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -248,9 +250,10 @@ function Membership () {
                   <ListGroupItem>5% discount on all Fluvium Merchandize</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={13999} active>
+                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={13999} active>
                     Enroll
                   </Button>
+                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/paladin-13999.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -267,14 +270,22 @@ function Membership () {
                   <ListGroupItem>10% discount on all Fluvium Merchandize</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={49999} active>
+                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={49999} active>
                     Enroll
                   </Button>
+                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/zen-49999.jpeg"/>
                 </Card.Body>
               </Card>
           </CardDeck>
           </div>
         </div>
+       <hr className="hr-large d-none d-md-block"/>
+       <div className="rowcontainer">
+        <p>
+           Scan the QR Code to enroll into The Dojo. Please do send the payment confirmation image/screenshot to hello@thedojoblr.com for backend verification so we
+           can update your membership details!
+        </p>
+       </div>
        <hr className="hr-large d-none d-md-block"/>
      </div>
     </main>
