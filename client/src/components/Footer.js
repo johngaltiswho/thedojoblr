@@ -56,7 +56,7 @@ function Footer(props) {
                 <Link to="/frequently-asked-Questions"><h5> FAQ's </h5></Link>
               </li>
               <li className="space">
-                <Link to="/enquiry"><h5> Enquiry </h5></Link>
+                <Link to="/the-arts"><h5> Arts </h5></Link>
               </li>
               <li className="space">
                 <Link to="/the-artists"><h5> Artists </h5></Link>
