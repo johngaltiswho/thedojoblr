@@ -47,7 +47,6 @@ function Membership () {
   }
 
   const toggleMembership = (e) => {
-    console.log(e.target.value === "899")
     if(e.target.value === "899") {
       setMembershipType("Ronin Pass")
     } else if (e.target.value === "4799") {
@@ -56,6 +55,8 @@ function Membership () {
       setMembershipType("Paladin Pass")
     } else if (e.target.value === "49999") {
       setMembershipType("Zen Pass")
+    } else if (e.target.value === "1") {
+      setMembershipType("Test Pass")
     }
     console.log(membershipType)
 
@@ -75,7 +76,7 @@ function Membership () {
     .then(res => {
       console.log(res.data)
       const options = {
-        key: "rzp_test_jXR29jYHg3XOmi", // Enter the Key ID generated from the Dashboard
+        key: "rzp_live_ws6On1bGWL78PH", // Enter the Key ID generated from the Dashboard
         amount: res.data.amount.toString(),
         currency: "INR",
         name: 'THE DOJO',
@@ -198,6 +199,26 @@ function Membership () {
             <CardDeck>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <Card.Body>
+                  <Card.Title> Test Pass <br/> <br/><strong><h3> Rs.1 </h3> </strong>
+                  </Card.Title>
+                  <Card.Text>
+                    It's easy to stand with the crowd. It takes courage to stand alone.
+                  </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>Single day pass</ListGroupItem>
+                  <ListGroupItem>Access to all the classes throughout the day</ListGroupItem>
+                  <ListGroupItem>No signup or hidden fees</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                  <Button className="" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={1} active>
+                    Enroll
+                  </Button>
+                  <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
+                </Card.Body>
+              </Card>
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <Card.Body>
                   <Card.Title>Ronin (Day) Pass <br/> <br/><strong><h3> Rs.899 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
@@ -210,10 +231,10 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={899} active>
+                  <Button className="" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={899} active>
                     Enroll
                   </Button>
-                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
+                  <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -230,10 +251,10 @@ function Membership () {
                   <ListGroupItem>No signup or hidden fees</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4799} active>
+                  <Button className="" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={4799} active>
                     Enroll
                   </Button>
-                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/samurai-4799.jpeg"/>
+                  <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/samurai-4799.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -241,19 +262,19 @@ function Membership () {
                   <Card.Title> Paladin (Quarterly) Pass <br/> <br/><strong><h3> Rs.13999 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
-                    A good battle plan that you act on today can be better than a perfect one tomorrow!
+                    Cowards never start. The weak never finish. Winners never quit.
                   </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>Quarterly agreement</ListGroupItem>
                   <ListGroupItem>Unlimited training access to all classes</ListGroupItem>
-                  <ListGroupItem>5% discount on all Fluvium Merchandize</ListGroupItem>
+                  <ListGroupItem>5% discount on Fluvium Merchandize</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={13999} active>
+                  <Button className="" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={13999} active>
                     Enroll
                   </Button>
-                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/paladin-13999.jpeg"/>
+                  <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/paladin-13999.jpeg"/>
                 </Card.Body>
               </Card>
               <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -261,19 +282,19 @@ function Membership () {
                   <Card.Title> Zen (Annual) Pass <br/> <br/><strong><h3> Rs.49999 </h3> </strong>
                   </Card.Title>
                   <Card.Text>
-                    Cowards never start. The weak never finish. Winners never quit.
+                    Black Belt — A white belt that never quit
                   </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>Annual agreement</ListGroupItem>
                   <ListGroupItem>Unlimited training access to all classes</ListGroupItem>
-                  <ListGroupItem>10% discount on all Fluvium Merchandize</ListGroupItem>
+                  <ListGroupItem>10% discount on Fluvium Merchandize</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Button className="none" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={49999} active>
+                  <Button className="" variant="primary" size="lg" onClick={!isAuthenticated ? () => loginWithRedirect({}) : (e)=>toggleMembership(e)} value={49999} active>
                     Enroll
                   </Button>
-                  <Image className="qrcode" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/zen-49999.jpeg"/>
+                  <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/zen-49999.jpeg"/>
                 </Card.Body>
               </Card>
           </CardDeck>
@@ -286,7 +307,20 @@ function Membership () {
            can update your membership details!
         </p>
        </div>
+       <div className="rowcontainer">
+        <h2 className="header-center"> PROMOTIONS </h2>
+        <p>
+          We're currently running the below mentioned promotions to facilitate & provide martial arts training at discounted rates! Eligible candidates, Please
+          email your credentials along with ID cards in order to avail the same :-
+          <ul>
+            <li> First responders such as police officers, army veterans/soldiers, doctors, nurses, etc. get 50% off on the membership plans</li>
+            <li> Students get 25% off on membership plans on submission of valid ID cards</li>
+            <li> Invite your friend or family and if they enroll, both you and they get 15 days added to your membership plan! </li>
+          </ul>
+        </p>
+       </div>
        <hr className="hr-large d-none d-md-block"/>
+
      </div>
     </main>
   );

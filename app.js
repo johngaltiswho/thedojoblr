@@ -22,9 +22,6 @@ var orderRouter = require('./routes/orderRouter');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 function forceSsl(req, res, next) {
-  console.log("Entering ForceSSL")
-  console.log("Protocol:" + req.headers['x-forwarded-proto'])
-  console.log("environment: " + app.get('env'))
     if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
         console.log('Succesfully Redirected to HTTPS')
         return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
@@ -40,9 +37,6 @@ function forceSsl(req, res, next) {
 function wwwRedirect(req, res, next) {
   console.log("HeaderHost:" + req.headers.host.slice(0, 4))
     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
-      console.log(req.headers.host);
-      console.log(req.protocol);
-      console.log(req.originalUrl);
       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
       console.log("Redirect successful")
     }

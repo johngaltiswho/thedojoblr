@@ -14,9 +14,9 @@ enquiryRouter.use(bodyParser.json());
 
 enquiryRouter.route('/')
 .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
-.get(cors.cors,(req, res, next) => {
-	res.render('enquiry');
-})
+// .get(cors.cors,(req, res, next) => {
+// 	res.send('enquiry');
+// })
 .post((req, res, next) => {
 	console.log(req.body)
 	Enquiry.create(req.body)

@@ -13,8 +13,8 @@ var crypto = require('crypto');
 var encryptionHelper = require('../encrypt-decrypt');
 
 var rzp = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID, // your `KEY_ID`
-  key_secret: process.env.RAZORPAY_KEY_SECRET // your `KEY_SECRET`
+  key_id: process.env.RAZORPAY_LIVE_KEY_ID, // your `KEY_ID`
+  key_secret: process.env.RAZORPAY_LIVE_KEY_SECRET // your `KEY_SECRET`
 });
 
 const razorpayRouter = express.Router();
@@ -103,6 +103,8 @@ razorpayRouter.route('/confirmation')
           endDate.setDate(endDate.getDate() + 120);
         } else if(req.body.membership === "Zen Pass") {
           endDate.setDate(endDate.getDate() + 365);
+        } else if(req.body.membership === "Test Pass") {
+          endDate.setDate(endDate.getDate() + 1);
         }
         User.updateOne({
           email: req.body.email
