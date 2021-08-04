@@ -11,7 +11,7 @@ function OrderConfirmation(props) {
             <div class="thumbnail center well well-sm text-center">
               <h2 class="space">CONGRATULATIONS</h2>
               <p>
-                Your order is confirmed. We welcome you to The Dojo Community and are excited to facilitate & be part of your growth as a martial artists.
+                Your order is confirmed. We welcome you to The Dojo Community and are excited to facilitate & be part of your growth as a martial artist.
                 <br/>
                 You can always reach out to us at hello@thedojoblr.com for any queries or concern regarding your enrollment.
                 See you on the mats.

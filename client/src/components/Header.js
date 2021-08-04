@@ -30,12 +30,12 @@ function Header(props) {
               {isAuthenticated ?
                 <NavDropdown title="Account" id="dropdown-menu-align-right" menualign="left" drop="down" align="center">
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                  <NavDropdown.Item onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Logout": "Logout"}</NavDropdown.Item>
+                  <NavDropdown.Item onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout({ returnTo: window.location.origin })}> {!isAuthenticated ? "Logout": "Logout"}</NavDropdown.Item>
                 </NavDropdown>
                 :
                 ""
               }
-              <Nav.Link onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout()}> {!isAuthenticated ? "Login" : ""} </Nav.Link>
+              <Nav.Link onClick={!isAuthenticated ? () => loginWithRedirect({}) : () => logout({ returnTo: window.location.origin })}> {!isAuthenticated ? "Login" : ""} </Nav.Link>
             </Nav>
           </Navbar.Collapse>
 

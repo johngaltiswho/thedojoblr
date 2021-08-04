@@ -197,7 +197,7 @@ function Membership () {
             <p className="space col-md-12 col-xl-12 col-sm-12 col-xs-12"> Choose a plan that works best for you </p>
             <hr className="hr-large d-none d-md-block"/>
             <CardDeck>
-              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <Card className="col-lg-4 col-md-12 col-sm-12 col-xs-12 none">
                 <Card.Body>
                   <Card.Title> Test Pass <br/> <br/><strong><h3> Rs.1 </h3> </strong>
                   </Card.Title>
