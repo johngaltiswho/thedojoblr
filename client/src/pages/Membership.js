@@ -301,6 +301,12 @@ function Membership () {
           </div>
         </div>
        <hr className="hr-large d-none d-md-block"/>
+       <div className="rowcontainer none">
+        <p>
+           Scan the QR Code to enroll into The Dojo. Please do send the payment confirmation image/screenshot to hello@thedojoblr.com for backend verification so we
+           can update your membership details!
+        </p>
+       </div>
        <div className="rowcontainer">
         <h2 className="header-center"> PROMOTIONS </h2>
         <p>

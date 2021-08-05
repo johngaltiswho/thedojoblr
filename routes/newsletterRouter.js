@@ -58,7 +58,7 @@ newsletterRouter.route('/')
 		// 	.then(() => console.log('Mail sent successfully'))
 		// 	.catch((err) => next(err));
 		res.statusCode = 200;
-		console.log(newsletter);
+		console.log(newsletter)
 		res.send(newsletter)
 	}, (err) => next(err))
 	.catch((err) => next(err));
