@@ -21,40 +21,46 @@ var orderRouter = require('./routes/orderRouter');
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+app.set('trust proxy', true);
+
 function forceSsl(req, res, next) {
-  console.log("Header: " +req.headers['x-forwarded-proto'] === 'http')
-  var redirectUrl = ['https://', req.get('Host'), req.url].join('');
-  console.log("RedirectUrl:" + redirectUrl)
-    if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
-        console.log('Succesfully Redirected to HTTPS')
-        return res.redirect(301, ['https://', req.get('Host'), req.originalUrl].join(''));
-    } else {
-      console.log( 'No need to re-direct to HTTPS' );
-      next();
-    }
+  console.log("Header: " +req.headers['x-forwarded-proto'])
+  // var redirectUrl = ['https://', req.get('Host'), req.url].join('');
+  console.log("Host:" + req.get('Host'))
+  console.log("Url:" + req.originalUrl)
+  // console.log("RedirectUrl:" + redirectUrl)
+  if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
+      console.log('Succesfully Redirected to HTTPS')
+      return res.redirect(301, ['https://', req.get('Host'), req.originalUrl].join(''));
+  } else {
+    console.log( 'No need to re-direct to HTTPS' );
+    next();
+  }
  };
  app.use(forceSsl);
 
 
-// // code snippet for www. domain to non www. domain name
-// function wwwRedirect(req, res, next) {
-//   console.log("HeaderHost:" + req.headers.host.slice(0, 4))
-//   console.log("Protocol:" + req.protocol)
-//     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
-//       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
-//       console.log("Redirect successful")
-//     }
-//     next();
-// };
+// code snippet for www. domain to non www. domain name
+function wwwRedirect(req, res, next) {
+  console.log("HeaderHost:" + req.headers.host.slice(0, 4))
+  console.log("Protocol:" + req.protocol)
+    if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
+      return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
+      console.log("Redirect successful")
+    }
+    next();
+};
 
-app.set('trust proxy', true);
+app.use(wwwRedirect);
+
+
+
 
 // app.use((req, res, next) => {
 //     req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
 // })
 
 
-// app.use(wwwRedirect);
 
 
 const url = process.env.MONGODB_URL_ATLAS;
