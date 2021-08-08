@@ -29,6 +29,7 @@ function forceSsl(req, res, next) {
   console.log("Host:" + req.get('Host'))
   console.log("Url:" + req.originalUrl)
   // console.log("RedirectUrl:" + redirectUrl)
+  console.log((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'"))
   if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
       console.log('Succesfully Redirected to HTTPS')
       return res.redirect(301, ['https://', req.get('Host'), req.originalUrl].join(''));
@@ -47,6 +48,9 @@ function wwwRedirect(req, res, next) {
     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
       console.log("Redirect successful")
+    }
+    if (req.protocol === "http") {
+      return res.redirect(301, 'https://www.' + req.headers.host + req.originalUrl);
     }
     next();
 };
