@@ -23,7 +23,7 @@ var orderRouter = require('./routes/orderRouter');
 
 function forceSsl(req, res, next) {
   console.log("Header: " +req.headers['x-forwarded-proto'] === 'http')
-  var redirectUrl = ['https://', req.get('Host'), req.url].join(''));
+  var redirectUrl = ['https://', req.get('Host'), req.url].join('');
   console.log("RedirectUrl:" + redirectUrl)
     if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
         console.log('Succesfully Redirected to HTTPS')
