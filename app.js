@@ -27,7 +27,7 @@ function forceSsl(req, res, next) {
   console.log("RedirectUrl:" + redirectUrl)
     if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
         console.log('Succesfully Redirected to HTTPS')
-        return res.redirect(301, ['https://', req.get('Host'), req.url].join(''));
+        return res.redirect(301, ['https://', req.get('Host'), req.originalUrl].join(''));
     } else {
       console.log( 'No need to re-direct to HTTPS' );
       next();
@@ -36,15 +36,16 @@ function forceSsl(req, res, next) {
  app.use(forceSsl);
 
 
-// code snippet for www. domain to non www. domain name
-function wwwRedirect(req, res, next) {
-  console.log("HeaderHost:" + req.headers.host.slice(0, 4))
-    if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
-      return res.redirect(301, 'https://www.' + req.headers.host + req.originalUrl);
-      console.log("Redirect successful")
-    }
-    next();
-};
+// // code snippet for www. domain to non www. domain name
+// function wwwRedirect(req, res, next) {
+//   console.log("HeaderHost:" + req.headers.host.slice(0, 4))
+//   console.log("Protocol:" + req.protocol)
+//     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
+//       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
+//       console.log("Redirect successful")
+//     }
+//     next();
+// };
 
 app.set('trust proxy', true);
 
@@ -53,7 +54,7 @@ app.set('trust proxy', true);
 // })
 
 
-app.use(wwwRedirect);
+// app.use(wwwRedirect);
 
 
 const url = process.env.MONGODB_URL_ATLAS;
