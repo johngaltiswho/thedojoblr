@@ -50,7 +50,7 @@ function wwwRedirect(req, res, next) {
       console.log("Redirect successful")
     }
     if (req.protocol === "http") {
-      return res.redirect(301, 'https://www.' + req.headers.host + req.originalUrl);
+      return res.redirect(301, 'https://' + req.headers.host + req.originalUrl);
     }
     next();
 };
