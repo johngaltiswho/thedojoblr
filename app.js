@@ -24,12 +24,12 @@ var orderRouter = require('./routes/orderRouter');
 app.set('trust proxy', true);
 
 function forceSsl(req, res, next) {
-  console.log("Header: " +req.headers['x-forwarded-proto'])
+  // console.log("Header: " +req.headers['x-forwarded-proto'])
   // var redirectUrl = ['https://', req.get('Host'), req.url].join('');
-  console.log("Host:" + req.get('Host'))
-  console.log("Url:" + req.originalUrl)
+  // console.log("Host:" + req.get('Host'))
+  // console.log("Url:" + req.originalUrl)
   // console.log("RedirectUrl:" + redirectUrl)
-  console.log((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'"))
+  // console.log((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'"))
   if ((req.headers['x-forwarded-proto'] === 'http') && (app.get('env') === "'production'")) {
       console.log('Succesfully Redirected to HTTPS')
       return res.redirect(301, ['https://', req.get('Host'), req.originalUrl].join(''));
@@ -38,13 +38,13 @@ function forceSsl(req, res, next) {
     next();
   }
  };
- app.use(forceSsl);
+app.use(forceSsl);
 
 
 // code snippet for www. domain to non www. domain name
 function wwwRedirect(req, res, next) {
-  console.log("HeaderHost:" + req.headers.host.slice(0, 4))
-  console.log("Protocol:" + req.protocol)
+  // console.log("HeaderHost:" + req.headers.host.slice(0, 4))
+  // console.log("Protocol:" + req.protocol)
     if ((req.headers.host.slice(0, 4) != 'www.') && (app.get('env') === "'production'")) {
       return res.redirect(301, req.protocol + '://www.' + req.headers.host + req.originalUrl);
       console.log("Redirect successful")

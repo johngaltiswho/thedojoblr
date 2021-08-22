@@ -151,6 +151,54 @@ function Membership () {
     setShow(false)
   }
 
+  const rentalSection = (
+    <>
+    <div className="fixing-newsletter">
+      <div className="thumbnail center well well-sm text-center">
+        <h1 className="space col-md-12 col-xl-12 col-sm-12 col-xs-12"> THE DOJO AS A SERVICE </h1>
+        <p className="space col-md-12 col-xl-12 col-sm-12 col-xs-12"> Choose a plan that works best for you </p>
+        <hr className="hr-large d-none d-md-block"/>
+        <CardDeck>
+          <Card className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <Card.Body>
+              <Card.Title>Hourly Pass <br/> <br/><strong><h3> Rs.999 </h3> </strong>
+              </Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Rent out the space for an hour</ListGroupItem>
+              <ListGroupItem>Have access to the entire space to yourself including all facilities</ListGroupItem>
+              <ListGroupItem>No signup or hidden fees</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
+            </Card.Body>
+          </Card>
+          <Card className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <Card.Body>
+              <Card.Title> Monthly Pass <br/> <br/><strong><h3> Case By Case </h3> </strong>
+              </Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Month to month agreement</ListGroupItem>
+              <ListGroupItem>Access to the entire space & facilities</ListGroupItem>
+              <ListGroupItem>A nominal monthly deposit. </ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/samurai-4799.jpeg"/>
+            </Card.Body>
+          </Card>
+        </CardDeck>
+      </div>
+    </div>
+    <div className="rowcontainer">
+     <p className="header-center">
+        For more detailed pricing information, email us at hello@thedojoblr.com.
+     </p>
+    </div>
+    <hr className="hr-large d-none d-md-block"/>
+    </>
+  )
+
   return (
     <main>
       <Modal show={show} onHide={handleClose} centered={1}>
@@ -297,7 +345,7 @@ function Membership () {
                   <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/zen-49999.jpeg"/>
                 </Card.Body>
               </Card>
-          </CardDeck>
+            </CardDeck>
           </div>
         </div>
        <hr className="hr-large d-none d-md-block"/>
@@ -320,7 +368,7 @@ function Membership () {
         </p>
        </div>
        <hr className="hr-large d-none d-md-block"/>
-
+       {rentalSection}
      </div>
     </main>
   );

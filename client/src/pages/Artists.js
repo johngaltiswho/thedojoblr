@@ -21,8 +21,8 @@ function Artists(props) {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/artists/vinayak1.jpeg"
-              alt="Second slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/3.5.JPG"
+              alt="Vinayak Shetty"
             />
 
             <Carousel.Caption>

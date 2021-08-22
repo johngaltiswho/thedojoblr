@@ -11,29 +11,29 @@ function HomePage(props) {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/renderings/thedojotraining2.jpg"
-              alt="First slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/1.jpg"
+              alt="Dojo Training Area"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/renderings/thedojowall.jpg"
-              alt="Second slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/8.jpg"
+              alt="The Dojo Wall"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/renderings/thedojowall2.jpg"
-              alt="Third slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/5.jpg"
+              alt="Training Area"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-img"
-              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/renderings/thedojopartition.jpg"
-              alt="Third slide"
+              src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/6.jpg"
+              alt="Training Area"
             />
           </Carousel.Item>
         </Carousel>

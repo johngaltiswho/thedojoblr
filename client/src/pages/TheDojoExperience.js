@@ -7,7 +7,7 @@ function TheDojoExperience(props) {
   return (
     <main>
       <div className="full-width">
-        <Image src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/renderings/thedojowall2.jpg" fluid />
+        <Image src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/architectural-images/3.1.jpg" fluid />
       </div>
       <div className="container">
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
