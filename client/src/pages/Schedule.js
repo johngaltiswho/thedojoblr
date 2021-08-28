@@ -74,27 +74,27 @@ function Schedule(props) {
                 <td className="align-middle">17:30pm</td>
                 <td>
                   <p className="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jiujitsu Pro Class <br/> No-Gi</p>
-                  <div className="margin-10px-top font-size14">17:30-18:30</div>
+                  <div className="margin-10px-top font-size14">18:00-19:00</div>
                   <div className="font-size13 text-light-gray">Uma Maheshwar Reddy</div>
                 </td>
                 <td>
                   <p className="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jiujitsu Pro Class <br/> Gi</p>
-                  <div className="margin-10px-top font-size14">17:30-18:30</div>
+                  <div className="margin-10px-top font-size14">18:00-19:00</div>
                   <div className="font-size13 text-light-gray">Uma Maheshwar Reddy</div>
                 </td>
                 <td>
                   <p className="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jiujitsu Pro Class <br/> No-Gi</p>
-                  <div className="margin-10px-top font-size14">17:30-18:30</div>
+                  <div className="margin-10px-top font-size14">18:00-19:00</div>
                   <div className="font-size13 text-light-gray">Uma Maheshwar Reddy</div>
                 </td>
                 <td>
                   <p className="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jiujitsu Pro Class <br/> Gi</p>
-                  <div className="margin-10px-top font-size14">17:30-18:30</div>
+                  <div className="margin-10px-top font-size14">18:00-19:00</div>
                   <div className="font-size13 text-light-gray">Uma Maheshwar Reddy</div>
                 </td>
                 <td>
                   <p className="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Jiujitsu Pro Class <br/> No-Gi</p>
-                  <div className="margin-10px-top font-size14">17:30-18:30</div>
+                  <div className="margin-10px-top font-size14">18:00-19:00</div>
                   <div className="font-size13 text-light-gray">Uma Maheshwar Reddy</div>
                 </td>
                 <td className="bg-light-gray">

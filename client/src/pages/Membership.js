@@ -161,7 +161,21 @@ function Membership () {
         <CardDeck>
           <Card className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <Card.Body>
-              <Card.Title>Hourly Pass <br/> <br/><strong><h3> Rs.999 </h3> </strong>
+              <Card.Title>Hourly Pass - Shared <br/> <br/><strong><h3> Rs.499 </h3> </strong>
+              </Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Rent out the space for an hour</ListGroupItem>
+              <ListGroupItem>The space will be shared with other athletes/coaches/trainers like yourselves.</ListGroupItem>
+              <ListGroupItem>No signup or hidden fees</ListGroupItem>
+            </ListGroup>
+            <Card.Body>
+              <Image className="qrcode none" src="https://s3.ap-south-1.amazonaws.com/thedojoblr.com/ronin-899.jpeg"/>
+            </Card.Body>
+          </Card>
+          <Card className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <Card.Body>
+              <Card.Title>Hourly Pass - Private<br/> <br/><strong><h3> Rs.999 </h3> </strong>
               </Card.Title>
             </Card.Body>
             <ListGroup className="list-group-flush">
